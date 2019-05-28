@@ -13,6 +13,10 @@
 #     name: python3
 # ---
 
+# + {"toc": true, "cell_type": "markdown"}
+# <h1>Table of Contents<span class="tocSkip"></span></h1>
+# <div class="toc"><ul class="toc-item"></ul></div>
+
 # +
 import pandas as pd
 import numpy as np
@@ -63,30 +67,31 @@ df = df.assign(TRANSACTION_ID=le.fit(df['TRANSACTION_ID']).transform(df['TRANSAC
 
 
 # +
-df.loc[df.TRANSACTION_ID == 7686, 'TRANSACTION_CONTRACTED_AT'] = "2018-07-31 12:00:00 UTC"
-df.loc[df.TRANSACTION_ID == 3874, 'TRANSACTION_CONTRACTED_AT'] = "2019-04-17 04:56:02 UTC"
-df.loc[df.TRANSACTION_ID == 4084, 'TRANSACTION_CONTRACTED_AT'] = "2019-04-22 04:56:02 UTC"
-df.loc[df.TRANSACTION_ID == 11335, 'TRANSACTION_CONTRACTED_AT'] = "2019-01-25 05:50:36 UTC"
-df.loc[df.TRANSACTION_ID == 11400, 'TRANSACTION_CONTRACTED_AT'] = "2019-01-29 12:00:00 UTC"
-df.loc[df.TRANSACTION_ID == 12536, 'TRANSACTION_CONTRACTED_AT'] = "2019-02-28 05:50:36 UTC"
-df.loc[df.TRANSACTION_ID == 5539, 'TRANSACTION_CONTRACTED_AT'] = "2019-04-30 12:00:00 UTC"
-df.loc[df.TRANSACTION_ID == 1234, 'TRANSACTION_CONTRACTED_AT'] = "2018-03-31 05:00:00 UTC"
-df.loc[df.TRANSACTION_ID == 6642, 'TRANSACTION_CONTRACTED_AT'] = "2018-05-31 12:00:00 UTC"
-df.loc[df.TRANSACTION_ID == 7864, 'TRANSACTION_CONTRACTED_AT'] = "2018-07-23 12:00:00 UTC"
-df.loc[df.TRANSACTION_ID == 9186, 'TRANSACTION_CONTRACTED_AT'] = "2018-11-15 05:50:36 UTC"
-df.loc[df.TRANSACTION_ID == 2106, 'TRANSACTION_CONTRACTED_AT'] = "2019-03-14 12:00:00 UTC"
-df.loc[df.TRANSACTION_ID == 4976, 'TRANSACTION_CONTRACTED_AT'] = "2019-05-12 12:00:00 UTC"
-df.loc[df.TRANSACTION_ID == 10732, 'TRANSACTION_CONTRACTED_AT'] = "2018-05-20 12:00:00 UTC"
-df.loc[df.TRANSACTION_ID == 2153, 'TRANSACTION_CONTRACTED_AT'] = "2018-12-20 12:00:00 UTC"
-df.loc[df.TRANSACTION_ID == 3582, 'TRANSACTION_CONTRACTED_AT'] = "2019-04-19 12:00:00 UTC"
-df.loc[df.TRANSACTION_ID == 1153, 'TRANSACTION_CONTRACTED_AT'] = "2018-07-28 05:50:36 UTC"
-df.loc[df.TRANSACTION_ID == 2474, 'TRANSACTION_CONTRACTED_AT'] = "2019-03-10 12:00:00 UTC"
+# Transactions contracted at
+df.loc[df.TRANSACTION_ID == 7686, 'transaction_contracted_at'] = "2018-07-31 12:00:00 UTC"
+df.loc[df.TRANSACTION_ID == 3874, 'transaction_contracted_at'] = "2019-04-17 04:56:02 UTC"
+df.loc[df.TRANSACTION_ID == 4084, 'transaction_contracted_at'] = "2019-04-22 04:56:02 UTC"
+df.loc[df.TRANSACTION_ID == 11335, 'transaction_contracted_at'] = "2019-01-25 05:50:36 UTC"
+df.loc[df.TRANSACTION_ID == 11400, 'transaction_contracted_at'] = "2019-01-29 12:00:00 UTC"
+df.loc[df.TRANSACTION_ID == 12536, 'transaction_contracted_at'] = "2019-02-28 05:50:36 UTC"
+df.loc[df.TRANSACTION_ID == 5539, 'transaction_contracted_at'] = "2019-04-30 12:00:00 UTC"
+df.loc[df.TRANSACTION_ID == 1234, 'transaction_contracted_at'] = "2018-03-31 05:00:00 UTC"
+df.loc[df.TRANSACTION_ID == 6642, 'transaction_contracted_at'] = "2018-05-31 12:00:00 UTC"
+df.loc[df.TRANSACTION_ID == 7864, 'transaction_contracted_at'] = "2018-07-23 12:00:00 UTC"
+df.loc[df.TRANSACTION_ID == 9186, 'transaction_contracted_at'] = "2018-11-15 05:50:36 UTC"
+df.loc[df.TRANSACTION_ID == 2106, 'transaction_contracted_at'] = "2019-03-14 12:00:00 UTC"
+df.loc[df.TRANSACTION_ID == 4976, 'transaction_contracted_at'] = "2019-05-12 12:00:00 UTC"
+df.loc[df.TRANSACTION_ID == 10732, 'transaction_contracted_at'] = "2018-05-20 12:00:00 UTC"
+df.loc[df.TRANSACTION_ID == 2153, 'transaction_contracted_at'] = "2018-12-20 12:00:00 UTC"
+df.loc[df.TRANSACTION_ID == 3582, 'transaction_contracted_at'] = "2019-04-19 12:00:00 UTC"
+df.loc[df.TRANSACTION_ID == 1153, 'transaction_contracted_at'] = "2018-07-28 05:50:36 UTC"
+df.loc[df.TRANSACTION_ID == 2474, 'transaction_contracted_at'] = "2019-03-10 12:00:00 UTC"
 
-
-df.loc[df.TRANSACTION_ID == 8017, 'TRANSACTION_EFFECTIVE_AT'] = "2018-08-31 12:00:00 UTC"
-df.loc[df.TRANSACTION_ID == 5675, 'TRANSACTION_EFFECTIVE_AT'] = "2019-07-22 12:00:00 UTC"
-df.loc[df.TRANSACTION_ID == 3423, 'TRANSACTION_EFFECTIVE_AT'] = "2019-11-12 12:00:00 UTC"
-df.loc[df.TRANSACTION_ID == 5141, 'TRANSACTION_EFFECTIVE_AT'] = "2019-06-14 12:00:00 UTC"
+# Transactions effective at
+df.loc[df.TRANSACTION_ID == 8017, 'transaction_effective_at'] = "2018-08-31 12:00:00 UTC"
+df.loc[df.TRANSACTION_ID == 5675, 'transaction_effective_at'] = "2019-07-22 12:00:00 UTC"
+df.loc[df.TRANSACTION_ID == 3423, 'transaction_effective_at'] = "2019-11-12 12:00:00 UTC"
+df.loc[df.TRANSACTION_ID == 5141, 'transaction_effective_at'] = "2019-06-14 12:00:00 UTC"
 
 # -
 
