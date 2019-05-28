@@ -13,7 +13,9 @@
 #     name: python3
 # ---
 
-# ### Prepare Environment
+#
+
+# ## Prepare Environment
 
 # +
 # %matplotlib inline
