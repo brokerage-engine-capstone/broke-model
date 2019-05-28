@@ -15,8 +15,11 @@
 
 # + {"toc": true, "cell_type": "markdown"}
 # <h1>Table of Contents<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Environment" data-toc-modified-id="Environment-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Environment</a></span></li><li><span><a href="#Acquisition" data-toc-modified-id="Acquisition-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Acquisition</a></span></li><li><span><a href="#Preparation" data-toc-modified-id="Preparation-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Preparation</a></span><ul class="toc-item"><li><span><a href="#Encoding-various-ID-fields-for-readability-and-future-usage." data-toc-modified-id="Encoding-various-ID-fields-for-readability-and-future-usage.-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Encoding various ID fields for readability and future usage.</a></span></li><li><span><a href="#Correcting-dates-that-won't-get-transitioned-over" data-toc-modified-id="Correcting-dates-that-won't-get-transitioned-over-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Correcting dates that won't get transitioned over</a></span></li><li><span><a href="#Converting-non-times-to-actual-times" data-toc-modified-id="Converting-non-times-to-actual-times-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Converting non-times to actual times</a></span></li><li><span><a href="#Column-cleanup" data-toc-modified-id="Column-cleanup-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Column cleanup</a></span><ul class="toc-item"><li><span><a href="#Bonus-Columns-Removing-these-due-to-98%+-nulls" data-toc-modified-id="Bonus-Columns-Removing-these-due-to-98%+-nulls-3.4.1"><span class="toc-item-num">3.4.1&nbsp;&nbsp;</span>Bonus Columns Removing these due to 98%+ nulls</a></span></li><li><span><a href="#Dropping-standard_commission_type-as-it-only-has-one-variable-and-nulls" data-toc-modified-id="Dropping-standard_commission_type-as-it-only-has-one-variable-and-nulls-3.4.2"><span class="toc-item-num">3.4.2&nbsp;&nbsp;</span>Dropping standard_commission_type as it only has one variable and nulls</a></span></li><li><span><a href="#Imputing-nulls-with-0" data-toc-modified-id="Imputing-nulls-with-0-3.4.3"><span class="toc-item-num">3.4.3&nbsp;&nbsp;</span>Imputing nulls with 0</a></span></li></ul></li></ul></li><li><span><a href="#Exploration" data-toc-modified-id="Exploration-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Exploration</a></span></li><li><span><a href="#Modeling" data-toc-modified-id="Modeling-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Modeling</a></span></li></ul></div>
+# <div class="toc"><ul class="toc-item"><li><span><a href="#Environment" data-toc-modified-id="Environment-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Environment</a></span></li><li><span><a href="#Acquisition" data-toc-modified-id="Acquisition-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Acquisition</a></span></li><li><span><a href="#Preparation" data-toc-modified-id="Preparation-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Preparation</a></span><ul class="toc-item"><li><span><a href="#Lowercasing-all-column-names" data-toc-modified-id="Lowercasing-all-column-names-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Lowercasing all column names</a></span></li><li><span><a href="#Encoding-various-ID-fields-for-readability-and-future-usage." data-toc-modified-id="Encoding-various-ID-fields-for-readability-and-future-usage.-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Encoding various ID fields for readability and future usage.</a></span></li><li><span><a href="#Correcting-dates" data-toc-modified-id="Correcting-dates-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Correcting dates</a></span></li><li><span><a href="#Converting-date-columns-to-datetime-type" data-toc-modified-id="Converting-date-columns-to-datetime-type-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Converting date columns to datetime type</a></span></li><li><span><a href="#Column-cleanup" data-toc-modified-id="Column-cleanup-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Column cleanup</a></span><ul class="toc-item"><li><span><a href="#Remove-bonus-columns" data-toc-modified-id="Remove-bonus-columns-3.5.1"><span class="toc-item-num">3.5.1&nbsp;&nbsp;</span>Remove bonus columns</a></span></li><li><span><a href="#Drop-standard_commission_type" data-toc-modified-id="Drop-standard_commission_type-3.5.2"><span class="toc-item-num">3.5.2&nbsp;&nbsp;</span>Drop standard_commission_type</a></span></li><li><span><a href="#Imputing-nulls-with-0" data-toc-modified-id="Imputing-nulls-with-0-3.5.3"><span class="toc-item-num">3.5.3&nbsp;&nbsp;</span>Imputing nulls with 0</a></span></li></ul></li></ul></li><li><span><a href="#Exploration" data-toc-modified-id="Exploration-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Exploration</a></span></li><li><span><a href="#Modeling" data-toc-modified-id="Modeling-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Modeling</a></span></li></ul></div>
 # -
+
+# - [ ] get rid of times in date columns
+# - [ ] rename column names to something easier to remember/use
 
 # ## Environment 
 
@@ -31,9 +34,6 @@ import seaborn as sns
 
 from sklearn.preprocessing import LabelEncoder
 
-import warnings
-warnings.filterwarnings("ignore")
-
 pd.set_option('display.max_rows', 1000)
 pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', 1000)
@@ -42,17 +42,17 @@ pd.set_option('display.float_format', lambda x: '%.2f' % x)
 
 # ## Acquisition
 
-df = pd.read_csv('../agents_with_transactions.csv')
+df = pd.read_csv('agents_with_transactions.csv')
 
 # ## Preparation
 
-# **Lowercasing all column names**
+# ### Lowercasing all column names
 
-[df.rename(columns=lambda x: x.lower(), inplace=True) for col in df]
-
-df.head()
+df = df.rename(columns=lambda col: col.lower())
 
 # ### Encoding various ID fields for readability and future usage.
+
+# The raw values are long randomized strings whose uniqueness is the only thing of value.
 
 # +
 to_encode = ['agent_id', 'brokerage_id', 'transaction_id']
@@ -62,7 +62,9 @@ for col in to_encode:
     df[col] = le.transform(df[col])
 # -
 
-# ### Correcting dates that won't get transitioned over
+# ### Correcting dates
+
+# These dates were corrected because they had bad years. The corrected year for transaction_contracted_at was inferred from the dates for transaction_closed_at and transaction_effective_at columns. A similar approach was used for correcting transaction_effective_at column.
 
 # +
 # Transactions contracted at errors fixed
@@ -92,24 +94,29 @@ df.loc[df.transaction_id == 3423, 'transaction_effective_at'] = "2019-11-12 12:0
 df.loc[df.transaction_id == 5141, 'transaction_effective_at'] = "2019-06-14 12:00:00 UTC"
 # -
 
-# ### Converting non-times to actual times
+# ### Converting date columns to datetime type
 
 df['transaction_contracted_at'] = pd.to_datetime(df.transaction_contracted_at, errors = 'coerce')
 df['transaction_effective_at'] = pd.to_datetime(df.transaction_effective_at, errors = 'coerce')
 
 # ### Column cleanup
 
-# #### Bonus Columns Removing these due to 98%+ nulls
-#
+# #### Remove bonus columns 
+
+# These columns have 98%+ nulls
 
 to_drop = [col for col in df if col.startswith('bonus_')]
 df.drop(columns=to_drop, inplace=True)
 
-# #### Dropping standard_commission_type as it only has one variable and nulls
+# #### Drop standard_commission_type
+
+# It only has one variable and nulls
 
 df.drop(columns='standard_commission_type', inplace=True)
 
 # #### Imputing nulls with 0
+
+# Impute 0 for those rows where transaction_status is FELL_THROUGH; but we need to ask Ben why it's NaN for transactions that were COMPLETED
 
 df.standard_commission_gci_amount.fillna(value=0, inplace=True)
 df.standard_commission_brokerage_net_amount.fillna(value=0, inplace=True)
