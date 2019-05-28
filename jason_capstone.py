@@ -13,7 +13,10 @@
 #     name: python3
 # ---
 
-#
+# + {"toc": true, "cell_type": "markdown"}
+# <h1>Table of Contents<span class="tocSkip"></span></h1>
+# <div class="toc"><ul class="toc-item"><li><span><a href="#Prepare-Environment" data-toc-modified-id="Prepare-Environment-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Prepare Environment</a></span></li><li><span><a href="#Data-Preparation" data-toc-modified-id="Data-Preparation-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Data Preparation</a></span></li><li><span><a href="#Column-Cleanup" data-toc-modified-id="Column-Cleanup-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Column Cleanup</a></span><ul class="toc-item"><li><span><a href="#Agent_Id" data-toc-modified-id="Agent_Id-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Agent_Id</a></span></li><li><span><a href="#Agent_Name" data-toc-modified-id="Agent_Name-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Agent_Name</a></span></li><li><span><a href="#Commission_Anniversary" data-toc-modified-id="Commission_Anniversary-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Commission_Anniversary</a></span></li><li><span><a href="#Brokerage_Id" data-toc-modified-id="Brokerage_Id-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Brokerage_Id</a></span></li><li><span><a href="#Brokerage_Name" data-toc-modified-id="Brokerage_Name-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Brokerage_Name</a></span></li><li><span><a href="#Commission_Schedule_Id" data-toc-modified-id="Commission_Schedule_Id-3.6"><span class="toc-item-num">3.6&nbsp;&nbsp;</span>Commission_Schedule_Id</a></span></li><li><span><a href="#Commission_Schedule_Effective_Start_At" data-toc-modified-id="Commission_Schedule_Effective_Start_At-3.7"><span class="toc-item-num">3.7&nbsp;&nbsp;</span>Commission_Schedule_Effective_Start_At</a></span></li><li><span><a href="#Commission_Schedule_Effective_End_At" data-toc-modified-id="Commission_Schedule_Effective_End_At-3.8"><span class="toc-item-num">3.8&nbsp;&nbsp;</span>Commission_Schedule_Effective_End_At</a></span></li><li><span><a href="#Commission_Schedule_Active" data-toc-modified-id="Commission_Schedule_Active-3.9"><span class="toc-item-num">3.9&nbsp;&nbsp;</span>Commission_Schedule_Active</a></span></li></ul></li></ul></div>
+# -
 
 # ## Prepare Environment
 
@@ -70,7 +73,7 @@ list(df.columns)
 # ### Agent_Id
 # **Looks fine so leaving it as-is**
 
-df.agent_id.value_counts()
+df.agent_id.value_counts(dropna=False)
 
 # ### Agent_Name
 # **Dropping agent_name as it's not helpful.**
