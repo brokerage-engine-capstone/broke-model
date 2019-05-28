@@ -15,8 +15,32 @@
 
 # + {"toc": true, "cell_type": "markdown"}
 # <h1>Table of Contents<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Environment" data-toc-modified-id="Environment-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Environment</a></span></li><li><span><a href="#Acquisition" data-toc-modified-id="Acquisition-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Acquisition</a></span></li><li><span><a href="#Preparation" data-toc-modified-id="Preparation-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Preparation</a></span><ul class="toc-item"><li><span><a href="#Lowercasing-all-column-names" data-toc-modified-id="Lowercasing-all-column-names-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Lowercasing all column names</a></span></li><li><span><a href="#Encoding-various-ID-fields-for-readability-and-future-usage." data-toc-modified-id="Encoding-various-ID-fields-for-readability-and-future-usage.-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Encoding various ID fields for readability and future usage.</a></span></li><li><span><a href="#Correcting-dates" data-toc-modified-id="Correcting-dates-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Correcting dates</a></span></li><li><span><a href="#Converting-date-columns-to-datetime-type" data-toc-modified-id="Converting-date-columns-to-datetime-type-3.4"><span class="toc-item-num">3.4&nbsp;&nbsp;</span>Converting date columns to datetime type</a></span></li><li><span><a href="#Column-cleanup" data-toc-modified-id="Column-cleanup-3.5"><span class="toc-item-num">3.5&nbsp;&nbsp;</span>Column cleanup</a></span><ul class="toc-item"><li><span><a href="#Remove-bonus-columns" data-toc-modified-id="Remove-bonus-columns-3.5.1"><span class="toc-item-num">3.5.1&nbsp;&nbsp;</span>Remove bonus columns</a></span></li><li><span><a href="#Drop-standard_commission_type" data-toc-modified-id="Drop-standard_commission_type-3.5.2"><span class="toc-item-num">3.5.2&nbsp;&nbsp;</span>Drop standard_commission_type</a></span></li><li><span><a href="#Imputing-nulls-with-0" data-toc-modified-id="Imputing-nulls-with-0-3.5.3"><span class="toc-item-num">3.5.3&nbsp;&nbsp;</span>Imputing nulls with 0</a></span></li></ul></li></ul></li><li><span><a href="#Exploration" data-toc-modified-id="Exploration-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Exploration</a></span></li><li><span><a href="#Modeling" data-toc-modified-id="Modeling-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Modeling</a></span></li></ul></div>
+# <div class="toc"><ul class="toc-item"><li><span><a href="#Notes" data-toc-modified-id="Notes-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Notes</a></span><ul class="toc-item"><li><span><a href="#Questions" data-toc-modified-id="Questions-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Questions</a></span></li><li><span><a href="#Hypotheses" data-toc-modified-id="Hypotheses-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Hypotheses</a></span></li></ul></li><li><span><a href="#Environment" data-toc-modified-id="Environment-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Environment</a></span></li><li><span><a href="#Acquisition" data-toc-modified-id="Acquisition-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Acquisition</a></span></li><li><span><a href="#Preparation" data-toc-modified-id="Preparation-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Preparation</a></span><ul class="toc-item"><li><span><a href="#Lowercasing-all-column-names" data-toc-modified-id="Lowercasing-all-column-names-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Lowercasing all column names</a></span></li><li><span><a href="#Encoding-various-ID-fields-for-readability-and-future-usage." data-toc-modified-id="Encoding-various-ID-fields-for-readability-and-future-usage.-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Encoding various ID fields for readability and future usage.</a></span></li><li><span><a href="#Correcting-dates" data-toc-modified-id="Correcting-dates-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Correcting dates</a></span></li><li><span><a href="#Converting-date-columns-to-datetime-type" data-toc-modified-id="Converting-date-columns-to-datetime-type-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Converting date columns to datetime type</a></span></li><li><span><a href="#Column-cleanup" data-toc-modified-id="Column-cleanup-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Column cleanup</a></span><ul class="toc-item"><li><span><a href="#Remove-bonus-columns" data-toc-modified-id="Remove-bonus-columns-4.5.1"><span class="toc-item-num">4.5.1&nbsp;&nbsp;</span>Remove bonus columns</a></span></li><li><span><a href="#Drop-standard_commission_type" data-toc-modified-id="Drop-standard_commission_type-4.5.2"><span class="toc-item-num">4.5.2&nbsp;&nbsp;</span>Drop standard_commission_type</a></span></li><li><span><a href="#Imputing-nulls-with-0" data-toc-modified-id="Imputing-nulls-with-0-4.5.3"><span class="toc-item-num">4.5.3&nbsp;&nbsp;</span>Imputing nulls with 0</a></span></li></ul></li><li><span><a href="#Drop-agent_name" data-toc-modified-id="Drop-agent_name-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>Drop agent_name</a></span></li><li><span><a href="#Drop-brokerage-name" data-toc-modified-id="Drop-brokerage-name-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>Drop brokerage name</a></span></li><li><span><a href="#Drop-commission_schedule_active" data-toc-modified-id="Drop-commission_schedule_active-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>Drop commission_schedule_active</a></span></li></ul></li><li><span><a href="#Exploration" data-toc-modified-id="Exploration-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Exploration</a></span></li><li><span><a href="#Modeling" data-toc-modified-id="Modeling-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Modeling</a></span></li></ul></div>
 # -
+
+# ## Notes
+
+# ### Questions
+# * Brokerage Agency may have an impact on agent performance but we want to remain brokerage-agnostic.
+# * Commission Schedule ID - is this relevant?
+# * Commission split and volume may be correlated - tenure may also have an impact.
+# * What is Commission Schedule Active?  Should we drop?
+# * What is Transaction Number?
+# * If multiple rows have the same transaction ids and multiple agents, are these split?
+# * What happens when an agent leaves the agency?
+# * Listing price would be very valuable information.
+# * Can we get a better understanding of agent tenure?
+# * Is 5mil reasonable for a top performer?
+# * What does BE want as a deliverable?
+# * Can we use mean/median units and volume as a metric?
+# * More information on agents?  Age, Gender, City, Vehicle, Full/Part Time Status, Favorite Pizza Toppings
+
+# ### Hypotheses
+# * Standard Commission Type will positively correlate with units (higher commissions promote more sales activity)
+# * Standard GCI will correlate with overall gross volume
+# * Agents with more tenure will have larger overall gross volume
+# * Agents with fewer units will not be as representative in overall data (should look to omit)
+# * Delta between Listing Price and Sales 
 
 # - [ ] get rid of times in date columns
 # - [ ] rename column names to something easier to remember/use
@@ -120,6 +144,22 @@ df.drop(columns='standard_commission_type', inplace=True)
 
 df.standard_commission_gci_amount.fillna(value=0, inplace=True)
 df.standard_commission_brokerage_net_amount.fillna(value=0, inplace=True)
+
+# ### Drop agent_name
+
+# Agent ID provides a unique identifier.
+
+df.drop(columns='agent_name', inplace=True)
+
+# ### Drop brokerage name
+
+# Brokerage ID provides a unique identifier.
+
+df.drop(columns='brokerage_name', inplace=True)
+
+# ### Drop commission_schedule_active
+
+df.drop(columns='commission_schedule_active', inplace=True)
 
 # ## Exploration
 
