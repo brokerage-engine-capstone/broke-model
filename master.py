@@ -20,11 +20,20 @@
 
 # ## Notes
 
+# - [ ] Work on definition of profitability
+# - [ ] Exploration
+#     - [ ] Steven
+# - [ ] Feature engineering ideas
+#     - [ ] Orion
+#     - [ ] Jason
+
 # ### Questions
 # * Brokerage Agency may have an impact on agent performance but we want to remain brokerage-agnostic.
 # * Commission Schedule ID - is this relevant?
+#     * We determined it was not, and have removed it.
 # * Commission split and volume may be correlated - tenure may also have an impact.
 # * What is Commission Schedule Active?  Should we drop?
+#     * Yes, we dropped it.
 # * What is Transaction Number?
 # * If multiple rows have the same transaction ids and multiple agents, are these split?
 # * What happens when an agent leaves the agency?
@@ -32,6 +41,7 @@
 # * Can we get a better understanding of agent tenure?
 # * Is 5mil reasonable for a top performer?
 # * What does BE want as a deliverable?
+#     * They are open to whatever we develop.
 # * Can we use mean/median units and volume as a metric?
 # * More information on agents?  Age, Gender, City, Vehicle, Full/Part Time Status, Favorite Pizza Toppings
 # * Why do we have NaNs in gci and brokerage_net for transactions that were COMPLETED?
@@ -72,7 +82,7 @@ pd.set_option('display.float_format', lambda x: '%.2f' % x)
 # ## Acquisition
 
 df_raw = pd.read_csv('agents_with_transactions.csv')
-df = df_raw
+df = df_raw.copy()
 
 # ## Preparation
 
