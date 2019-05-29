@@ -15,7 +15,7 @@
 
 # + {"toc": true, "cell_type": "markdown"}
 # <h1>Table of Contents<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Notes" data-toc-modified-id="Notes-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Notes</a></span><ul class="toc-item"><li><span><a href="#Questions" data-toc-modified-id="Questions-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Questions</a></span></li><li><span><a href="#Hypotheses" data-toc-modified-id="Hypotheses-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Hypotheses</a></span></li></ul></li><li><span><a href="#Environment" data-toc-modified-id="Environment-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Environment</a></span></li><li><span><a href="#Acquisition" data-toc-modified-id="Acquisition-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Acquisition</a></span></li><li><span><a href="#Preparation" data-toc-modified-id="Preparation-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Preparation</a></span><ul class="toc-item"><li><span><a href="#Lowercasing-all-column-names" data-toc-modified-id="Lowercasing-all-column-names-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Lowercasing all column names</a></span></li><li><span><a href="#Encoding-various-ID-fields-for-readability-and-future-usage." data-toc-modified-id="Encoding-various-ID-fields-for-readability-and-future-usage.-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Encoding various ID fields for readability and future usage.</a></span></li><li><span><a href="#Correcting-dates" data-toc-modified-id="Correcting-dates-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Correcting dates</a></span></li><li><span><a href="#Converting-date-columns-to-datetime-type" data-toc-modified-id="Converting-date-columns-to-datetime-type-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Converting date columns to datetime type</a></span></li><li><span><a href="#Column-cleanup" data-toc-modified-id="Column-cleanup-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Column cleanup</a></span><ul class="toc-item"><li><span><a href="#Remove-bonus-columns" data-toc-modified-id="Remove-bonus-columns-4.5.1"><span class="toc-item-num">4.5.1&nbsp;&nbsp;</span>Remove bonus columns</a></span></li><li><span><a href="#Drop-standard_commission_type" data-toc-modified-id="Drop-standard_commission_type-4.5.2"><span class="toc-item-num">4.5.2&nbsp;&nbsp;</span>Drop standard_commission_type</a></span></li><li><span><a href="#Imputing-nulls-with-0" data-toc-modified-id="Imputing-nulls-with-0-4.5.3"><span class="toc-item-num">4.5.3&nbsp;&nbsp;</span>Imputing nulls with 0</a></span></li></ul></li><li><span><a href="#Drop-agent_name" data-toc-modified-id="Drop-agent_name-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>Drop agent_name</a></span></li><li><span><a href="#Drop-brokerage-name" data-toc-modified-id="Drop-brokerage-name-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>Drop brokerage name</a></span></li><li><span><a href="#Drop-commission_schedule_active" data-toc-modified-id="Drop-commission_schedule_active-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>Drop commission_schedule_active</a></span></li></ul></li><li><span><a href="#Exploration" data-toc-modified-id="Exploration-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Exploration</a></span></li><li><span><a href="#Modeling" data-toc-modified-id="Modeling-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Modeling</a></span></li></ul></div>
+# <div class="toc"><ul class="toc-item"><li><span><a href="#Notes" data-toc-modified-id="Notes-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Notes</a></span><ul class="toc-item"><li><span><a href="#Questions" data-toc-modified-id="Questions-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Questions</a></span></li><li><span><a href="#Hypotheses" data-toc-modified-id="Hypotheses-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Hypotheses</a></span></li><li><span><a href="#Deliverables" data-toc-modified-id="Deliverables-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Deliverables</a></span></li></ul></li><li><span><a href="#Environment" data-toc-modified-id="Environment-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Environment</a></span></li><li><span><a href="#Acquisition" data-toc-modified-id="Acquisition-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Acquisition</a></span></li><li><span><a href="#Preparation" data-toc-modified-id="Preparation-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Preparation</a></span><ul class="toc-item"><li><span><a href="#Lowercasing-all-column-names" data-toc-modified-id="Lowercasing-all-column-names-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Lowercasing all column names</a></span></li><li><span><a href="#Drop-Columns" data-toc-modified-id="Drop-Columns-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Drop Columns</a></span><ul class="toc-item"><li><span><a href="#agent_name" data-toc-modified-id="agent_name-4.2.1"><span class="toc-item-num">4.2.1&nbsp;&nbsp;</span>agent_name</a></span></li><li><span><a href="#commission_anniversary" data-toc-modified-id="commission_anniversary-4.2.2"><span class="toc-item-num">4.2.2&nbsp;&nbsp;</span>commission_anniversary</a></span></li><li><span><a href="#brokerage_name" data-toc-modified-id="brokerage_name-4.2.3"><span class="toc-item-num">4.2.3&nbsp;&nbsp;</span>brokerage_name</a></span></li><li><span><a href="#commission_schedule_id" data-toc-modified-id="commission_schedule_id-4.2.4"><span class="toc-item-num">4.2.4&nbsp;&nbsp;</span>commission_schedule_id</a></span></li><li><span><a href="#commission_schedule_active" data-toc-modified-id="commission_schedule_active-4.2.5"><span class="toc-item-num">4.2.5&nbsp;&nbsp;</span>commission_schedule_active</a></span></li><li><span><a href="#transaction_number" data-toc-modified-id="transaction_number-4.2.6"><span class="toc-item-num">4.2.6&nbsp;&nbsp;</span>transaction_number</a></span></li><li><span><a href="#transaction_closed_at" data-toc-modified-id="transaction_closed_at-4.2.7"><span class="toc-item-num">4.2.7&nbsp;&nbsp;</span>transaction_closed_at</a></span></li><li><span><a href="#transaction_list_amount" data-toc-modified-id="transaction_list_amount-4.2.8"><span class="toc-item-num">4.2.8&nbsp;&nbsp;</span>transaction_list_amount</a></span></li><li><span><a href="#standard_commission_type" data-toc-modified-id="standard_commission_type-4.2.9"><span class="toc-item-num">4.2.9&nbsp;&nbsp;</span>standard_commission_type</a></span></li></ul></li><li><span><a href="#Encoding-various-ID-fields-for-readability-and-future-usage." data-toc-modified-id="Encoding-various-ID-fields-for-readability-and-future-usage.-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Encoding various ID fields for readability and future usage.</a></span></li><li><span><a href="#Correcting-dates" data-toc-modified-id="Correcting-dates-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Correcting dates</a></span></li><li><span><a href="#Converting-date-columns-to-datetime-type" data-toc-modified-id="Converting-date-columns-to-datetime-type-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Converting date columns to datetime type</a></span></li><li><span><a href="#Column-cleanup" data-toc-modified-id="Column-cleanup-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>Column cleanup</a></span><ul class="toc-item"><li><span><a href="#Remove-bonus-columns" data-toc-modified-id="Remove-bonus-columns-4.6.1"><span class="toc-item-num">4.6.1&nbsp;&nbsp;</span>Remove bonus columns</a></span></li><li><span><a href="#Imputing-nulls-with-0" data-toc-modified-id="Imputing-nulls-with-0-4.6.2"><span class="toc-item-num">4.6.2&nbsp;&nbsp;</span>Imputing nulls with 0</a></span></li></ul></li></ul></li><li><span><a href="#Exploration" data-toc-modified-id="Exploration-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Exploration</a></span></li><li><span><a href="#Modeling" data-toc-modified-id="Modeling-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Modeling</a></span></li></ul></div>
 # -
 
 # ## Notes
@@ -34,6 +34,7 @@
 # * What does BE want as a deliverable?
 # * Can we use mean/median units and volume as a metric?
 # * More information on agents?  Age, Gender, City, Vehicle, Full/Part Time Status, Favorite Pizza Toppings
+# * Why do we have NaNs in gci and brokerage_net for transactions that were COMPLETED?
 
 # ### Hypotheses
 # * Standard Commission Type will positively correlate with units (higher commissions promote more sales activity)
@@ -45,9 +46,13 @@
 # - [ ] get rid of times in date columns
 # - [ ] rename column names to something easier to remember/use
 
+# ### Deliverables
+
 # ## Environment 
 
 # +
+from pprint import pprint
+
 import numpy as np
 import pandas as pd
 
@@ -66,20 +71,77 @@ pd.set_option('display.float_format', lambda x: '%.2f' % x)
 
 # ## Acquisition
 
-df = pd.read_csv('agents_with_transactions.csv')
+df_raw = pd.read_csv('agents_with_transactions.csv')
+df = df_raw
 
 # ## Preparation
 
 # ### Lowercasing all column names
 
-df = df.rename(columns=lambda col: col.lower())
+df.rename(columns=lambda col: col.lower(), inplace=True)
+
+# ### Drop Columns
+
+# #### agent_name
+
+# Agent ID provides a unique identifier already.
+
+df.drop(columns='agent_name', inplace=True)
+
+# #### commission_anniversary
+
+# Most of the data is missing and it's not clear what value this data provides.
+
+df.drop(columns='commission_anniversary', inplace=True)  # not useful information
+
+# #### brokerage_name
+
+# Brokerage ID provides a unique identifier.
+
+df.drop(columns='brokerage_name', inplace=True)
+
+# #### commission_schedule_id
+
+# It's not clear what value this data provides.
+
+df.drop(columns='commission_schedule_id', inplace=True)  # not useful information
+
+# #### commission_schedule_active
+
+# Some rows say TRUE when they should be FALSE. We cannot make sense of it now and may want to revisit and correct these. This column may be useful if we add a feature representing the number of commission schedules the realtor has been through.
+
+df.drop(columns='commission_schedule_active', inplace=True)
+
+# #### transaction_number
+
+# This column provides the same information as transaction_id and transaction_effective_at.
+
+df.drop(columns='transaction_number', inplace=True)
+
+# #### transaction_closed_at
+
+# The column transaction_effective_at provides better information.
+
+df.drop(columns='transaction_closed_at', inplace=True)
+
+# #### transaction_list_amount
+
+# This column is has few non-null entries. We may get better information from another csv.
+
+df.drop(columns='transaction_list_amount', inplace=True)
+
+# #### standard_commission_type
+
+# It is either one value or null and is not useful.
+
+df.drop(columns='standard_commission_type', inplace=True)
 
 # ### Encoding various ID fields for readability and future usage.
 
 # The raw values are long randomized strings whose uniqueness is the only thing of value.
 
 # +
-to_encode = ['agent_id', 'brokerage_id', 'transaction_id']
+to_encode = ['agent_id', 'brokerage_id', 'transaction_id', 'commission_schedule_strategy', 'transaction_side']
 
 for col in to_encode:
     le = LabelEncoder().fit(df[col])
@@ -120,8 +182,17 @@ df.loc[df.transaction_id == 5141, 'transaction_effective_at'] = "2019-06-14 12:0
 
 # ### Converting date columns to datetime type
 
+df['commission_schedule_effective_start_at'] = pd.to_datetime(df.commission_schedule_effective_start_at, errors = 'coerce')
+df['commission_schedule_efffective_end_at'] = pd.to_datetime(df.commission_schedule_effective_end_at, errors = 'coerce')
 df['transaction_contracted_at'] = pd.to_datetime(df.transaction_contracted_at, errors = 'coerce')
 df['transaction_effective_at'] = pd.to_datetime(df.transaction_effective_at, errors = 'coerce')
+
+df.commission_schedule_effective_start_at = df.commission_schedule_effective_start_at.dt.date
+df.commission_schedule_efffective_end_at = df.commission_schedule_efffective_end_at.dt.date
+df.transaction_contracted_at = df.transaction_contracted_at.dt.date
+df.transaction_effective_at = df.transaction_effective_at.dt.date
+
+df.head()
 
 # ### Column cleanup
 
@@ -132,34 +203,12 @@ df['transaction_effective_at'] = pd.to_datetime(df.transaction_effective_at, err
 to_drop = [col for col in df if col.startswith('bonus_')]
 df.drop(columns=to_drop, inplace=True)
 
-# #### Drop standard_commission_type
-
-# It only has one variable and nulls
-
-df.drop(columns='standard_commission_type', inplace=True)
-
 # #### Imputing nulls with 0
 
-# Impute 0 for those rows where transaction_status is FELL_THROUGH; but we need to ask Ben why it's NaN for transactions that were COMPLETED
+# Impute 0 for those rows where transaction_status is FELL_THROUGH
 
 df.standard_commission_gci_amount.fillna(value=0, inplace=True)
 df.standard_commission_brokerage_net_amount.fillna(value=0, inplace=True)
-
-# ### Drop agent_name
-
-# Agent ID provides a unique identifier.
-
-df.drop(columns='agent_name', inplace=True)
-
-# ### Drop brokerage name
-
-# Brokerage ID provides a unique identifier.
-
-df.drop(columns='brokerage_name', inplace=True)
-
-# ### Drop commission_schedule_active
-
-df.drop(columns='commission_schedule_active', inplace=True)
 
 # ## Exploration
 
