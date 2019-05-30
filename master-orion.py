@@ -256,15 +256,29 @@ df.transaction_effective_at.head()
 
 df.head()
 
+# + {"init_cell": true}
 df = df.assign(trans_year=df.transaction_effective_at.dt.year)
 df = df.assign(trans_quarter=df.transaction_effective_at.dt.quarter)
 agent_perf = df.groupby(["agent_id", "trans_year"])[["transaction_sales_amount"]].sum().reset_index()
+# -
 
 # Looking at the tags column, we're going to replace nulls with 'Other'
 
+# + {"init_cell": true}
 df.tags = df.tags.fillna(value='Other')
 
+# + {"init_cell": true}
 df.tags.value_counts(dropna=False)
+# -
+
+df.head()
+
+#df.loc[df.transaction_id == 7686, 'transaction_contracted_at'] = "2018-07-31 12:00:00 UTC"
+df.loc[df.tags == 'Residential|Residential', 'tags'] = 'Residential'
+
+df2 = df[(df.tags == 'Residential') | (df.tags == 'Other')]
+
+df2.tags.value_counts()
 
 df.trans_quarter.value_counts()
 
