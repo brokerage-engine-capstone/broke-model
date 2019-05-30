@@ -15,7 +15,7 @@
 
 # + {"toc": true, "cell_type": "markdown"}
 # <h1>Table of Contents<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Notes" data-toc-modified-id="Notes-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Notes</a></span><ul class="toc-item"><li><span><a href="#Questions" data-toc-modified-id="Questions-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Questions</a></span></li><li><span><a href="#Hypotheses" data-toc-modified-id="Hypotheses-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Hypotheses</a></span></li><li><span><a href="#To-do-list" data-toc-modified-id="To-do-list-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>To-do list</a></span></li><li><span><a href="#Deliverables" data-toc-modified-id="Deliverables-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Deliverables</a></span></li></ul></li><li><span><a href="#Environment" data-toc-modified-id="Environment-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Environment</a></span></li><li><span><a href="#Acquisition" data-toc-modified-id="Acquisition-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Acquisition</a></span></li><li><span><a href="#Preparation" data-toc-modified-id="Preparation-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Preparation</a></span><ul class="toc-item"><li><span><a href="#Lowercasing-all-column-names" data-toc-modified-id="Lowercasing-all-column-names-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Lowercasing all column names</a></span></li><li><span><a href="#Drop-Columns" data-toc-modified-id="Drop-Columns-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Drop Columns</a></span></li><li><span><a href="#Encoding-various-ID-fields-for-readability-and-future-usage." data-toc-modified-id="Encoding-various-ID-fields-for-readability-and-future-usage.-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Encoding various ID fields for readability and future usage.</a></span></li><li><span><a href="#Correcting-dates" data-toc-modified-id="Correcting-dates-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Correcting dates</a></span></li><li><span><a href="#Convert-dates-to-datetime-type" data-toc-modified-id="Convert-dates-to-datetime-type-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Convert dates to datetime type</a></span></li><li><span><a href="#Column-cleanup" data-toc-modified-id="Column-cleanup-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>Column cleanup</a></span><ul class="toc-item"><li><span><a href="#Remove-bonus-columns" data-toc-modified-id="Remove-bonus-columns-4.6.1"><span class="toc-item-num">4.6.1&nbsp;&nbsp;</span>Remove bonus columns</a></span></li><li><span><a href="#Imputing-nulls-with-0" data-toc-modified-id="Imputing-nulls-with-0-4.6.2"><span class="toc-item-num">4.6.2&nbsp;&nbsp;</span>Imputing nulls with 0</a></span></li></ul></li><li><span><a href="#Rename-Columns" data-toc-modified-id="Rename-Columns-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>Rename Columns</a></span></li></ul></li><li><span><a href="#Exploration" data-toc-modified-id="Exploration-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Exploration</a></span></li><li><span><a href="#Modeling" data-toc-modified-id="Modeling-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Modeling</a></span></li></ul></div>
+# <div class="toc"><ul class="toc-item"><li><span><a href="#Notes" data-toc-modified-id="Notes-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Notes</a></span><ul class="toc-item"><li><span><a href="#Questions" data-toc-modified-id="Questions-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Questions</a></span></li><li><span><a href="#Hypotheses" data-toc-modified-id="Hypotheses-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Hypotheses</a></span></li><li><span><a href="#To-do-list" data-toc-modified-id="To-do-list-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>To-do list</a></span></li><li><span><a href="#Deliverables" data-toc-modified-id="Deliverables-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Deliverables</a></span></li></ul></li><li><span><a href="#Environment" data-toc-modified-id="Environment-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Environment</a></span></li><li><span><a href="#Acquisition" data-toc-modified-id="Acquisition-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Acquisition</a></span></li><li><span><a href="#Preparation" data-toc-modified-id="Preparation-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Preparation</a></span><ul class="toc-item"><li><span><a href="#Lowercase-all-column-names" data-toc-modified-id="Lowercase-all-column-names-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Lowercase all column names</a></span></li><li><span><a href="#Drop-Columns" data-toc-modified-id="Drop-Columns-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Drop Columns</a></span></li><li><span><a href="#Encoding-columns" data-toc-modified-id="Encoding-columns-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Encoding columns</a></span><ul class="toc-item"><li><span><a href="#Various-ID-fields-and-categorical-variables" data-toc-modified-id="Various-ID-fields-and-categorical-variables-4.3.1"><span class="toc-item-num">4.3.1&nbsp;&nbsp;</span>Various ID fields and categorical variables</a></span></li></ul></li><li><span><a href="#Date-Columns" data-toc-modified-id="Date-Columns-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Date Columns</a></span><ul class="toc-item"><li><span><a href="#Correcting-dates" data-toc-modified-id="Correcting-dates-4.4.1"><span class="toc-item-num">4.4.1&nbsp;&nbsp;</span>Correcting dates</a></span></li><li><span><a href="#Convert-dates-to-datetime-type" data-toc-modified-id="Convert-dates-to-datetime-type-4.4.2"><span class="toc-item-num">4.4.2&nbsp;&nbsp;</span>Convert dates to datetime type</a></span></li></ul></li><li><span><a href="#Column-cleanup" data-toc-modified-id="Column-cleanup-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Column cleanup</a></span><ul class="toc-item"><li><span><a href="#Remove-bonus-columns" data-toc-modified-id="Remove-bonus-columns-4.5.1"><span class="toc-item-num">4.5.1&nbsp;&nbsp;</span>Remove bonus columns</a></span></li><li><span><a href="#Imputing-nulls-with-0" data-toc-modified-id="Imputing-nulls-with-0-4.5.2"><span class="toc-item-num">4.5.2&nbsp;&nbsp;</span>Imputing nulls with 0</a></span></li></ul></li><li><span><a href="#Rename-Columns" data-toc-modified-id="Rename-Columns-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>Rename Columns</a></span></li><li><span><a href="#Create-2018-DataFrame" data-toc-modified-id="Create-2018-DataFrame-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>Create 2018 DataFrame</a></span></li><li><span><a href="#Data-Sanity/Validation-Checks" data-toc-modified-id="Data-Sanity/Validation-Checks-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>Data Sanity/Validation Checks</a></span></li></ul></li><li><span><a href="#Exploration" data-toc-modified-id="Exploration-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Exploration</a></span></li><li><span><a href="#Modeling" data-toc-modified-id="Modeling-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Modeling</a></span></li></ul></div>
 # -
 
 # ## Notes
@@ -62,7 +62,7 @@
 
 # ## Environment 
 
-# + {"init_cell": true}
+# +
 from pprint import pprint
 
 import numpy as np
@@ -79,27 +79,31 @@ pd.set_option('display.max_rows', 1000)
 pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', 1000)
 pd.set_option('display.float_format', lambda x: '%.2f' % x)
+
+# modeling
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
 # -
 
 # ## Acquisition
 
-# + {"init_cell": true}
 df_raw = pd.read_csv('agents_with_transactions3.csv')
 df = df_raw.copy()
 df_raw.shape
-# -
 
 # ## Preparation
 
-# ### Lowercasing all column names
+# ### Lowercase all column names
 
-# + {"init_cell": true}
 df.rename(columns=lambda col: col.lower(), inplace=True)
-# -
 
 # ### Drop Columns
 
-# + {"init_cell": true}
 # Agent ID provides a unique identifier already.
 df.drop(columns='agent_name', inplace=True)
 # Most of the data is missing and it's not clear what value this data provides.
@@ -148,13 +152,18 @@ df.drop(columns=(['total_fees_paid_on_transaction',
 
                   ]),
         inplace=True)
-# -
 
-# ### Encoding various ID fields for readability and future usage.
+# ### Encoding columns
 
-# The raw values are long randomized strings whose uniqueness is the only thing of value.
+# #### Various ID fields and categorical variables
 
-# + {"init_cell": true}
+# For readability and future usage
+#
+# The raw values for the \_id columns are long randomized strings whose uniqueness is the only thing of value.
+#
+# commission_schedule_strategy and transaction_side are categorical variables.
+
+# +
 to_encode = ['agent_id',
              'brokerage_id',
              'transaction_id',
@@ -169,11 +178,13 @@ for col in to_encode:
     df[col] = le.transform(df[col])
 # -
 
-# ### Correcting dates
+# ### Date Columns
 
+# #### Correcting dates
 # These dates were corrected because they had bad years. The corrected year for transaction_contracted_at was inferred from the dates for transaction_closed_at and transaction_effective_at columns. A similar approach was used for correcting transaction_effective_at column.
 
-# + {"init_cell": true}
+# +
+# transaction_contracted_at has been dropped
 # Transactions contracted at errors fixed
 # df.loc[df.transaction_id == 7686, 'transaction_contracted_at'] = "2018-07-31 12:00:00 UTC"
 # df.loc[df.transaction_id == 3874, 'transaction_contracted_at'] = "2019-04-17 04:56:02 UTC"
@@ -201,14 +212,15 @@ df.loc[df.transaction_id == 3423, 'transaction_effective_at'] = "2019-11-12 12:0
 df.loc[df.transaction_id == 5141, 'transaction_effective_at'] = "2019-06-14 12:00:00 UTC"
 # -
 
-# ### Convert dates to datetime type
+# #### Convert dates to datetime type
 # Drop the time as well
 
-# + {"init_cell": true}
+# df['commission_schedule_effective_start_at'] = pd.to_datetime(df.commission_schedule_effective_start_at, errors = 'coerce')
+# df['commission_schedule_efffective_end_at'] = pd.to_datetime(df.commission_schedule_effective_end_at, errors = 'coerce')
+# df['transaction_contracted_at'] = pd.to_datetime(df.transaction_contracted_at, errors = 'coerce')
 df['transaction_effective_at'] = pd.to_datetime(df.transaction_effective_at, errors = 'coerce')
 df.transaction_effective_at = df.transaction_effective_at.dt.date
 df['transaction_effective_at'] = pd.to_datetime(df.transaction_effective_at, errors = 'coerce')
-# -
 
 # ### Column cleanup
 
@@ -216,24 +228,20 @@ df['transaction_effective_at'] = pd.to_datetime(df.transaction_effective_at, err
 #
 # These columns have 98%+ nulls
 
-# + {"init_cell": true}
 to_drop = [col for col in df if col.startswith('bonus_')]
 df.drop(columns=to_drop, inplace=True)
-# -
 
 # #### Imputing nulls with 0
 
 # Impute 0 for those rows where transaction_status is FELL_THROUGH
 
-# + {"init_cell": true}
 df.standard_commission_gci_amount.fillna(value=0, inplace=True)
 df.standard_commission_brokerage_net_amount.fillna(value=0, inplace=True)
-# -
 
 # ### Rename Columns
 # They need shorter, more descriptive names.
 
-# + {"init_cell": true}
+# +
 new_col_names = {'commission_schedule_strategy': 'com_plan', 
                  'transaction_effective_at': 'sale_date', 
                  'transaction_status': 'sale_status', 
@@ -249,47 +257,215 @@ new_col_names = {'commission_schedule_strategy': 'com_plan',
 df = df.rename(columns=new_col_names)
 # -
 
-# ## Exploration
+pprint(list(df_raw.columns))
 
-# + {"init_cell": true}
-df = df.assign(trans_year=df.sale_date.dt.year)
-df = df.assign(trans_quarter=df.sale_date.dt.quarter)
-agent_perf = df.groupby(["agent_id", "trans_year"])[["sale_amount"]].sum().reset_index()
+# ### Create 2018 DataFrame
 
-# + {"init_cell": true}
+df = df.assign(sale_year=df.sale_date.dt.year)
+df = df.assign(sale_quarter=df.sale_date.dt.quarter)
+agent_perf = df.groupby(["agent_id", "sale_year"])[["sale_amount"]].sum().reset_index()
+
 df.property_use = df.property_use.fillna(value='Other')
 
-# + {"init_cell": true}
 df.property_use.value_counts(dropna=False)
 
-# + {"init_cell": true}
 df.loc[df.property_use == 'Residential|Residential', 'property_use'] = 'Residential'
 
-# + {"init_cell": true}
 df2 = df[(df.property_use == 'Residential') | (df.property_use == 'Other')]
-# -
 
 df2.property_use.value_counts()
 
 df[df['sale_status'] == 'COMPLETE']\
-    .groupby(['trans_quarter', 'trans_year'])\
+    .groupby(['sale_quarter', 'sale_year'])\
     .mean()['sale_amount']
 
 df[df['sale_status'] == 'COMPLETE']\
-    .groupby(['agent_id', 'trans_year', 'trans_quarter'])\
+    .groupby(['agent_id', 'sale_year', 'sale_quarter'])\
     .count()['transaction_id']\
     .reset_index()\
-    .groupby('trans_quarter')\
+    .groupby('sale_quarter')\
     .mean()['transaction_id']
 
 df[df['sale_status'] == 'COMPLETE'].groupby('agent_id').count()['transaction_id'].value_counts(dropna=False)
 
+# Get only completed transactions
+
+df_complete = df[df['sale_status']=='COMPLETE']
+
+# Get only 2018 data
+
+df_2018 = df_complete[df_complete['sale_year']==2018]
+
+# Calculate summary statistics
+
+# Counting transactions
+agent_df = df_2018.groupby('agent_id').count()[['sale_status']]
+# Sum
+sum_df = df_2018.groupby('agent_id').sum()[['sale_amount', 'com_agent_net','com_brokerage_net']]
+# Avg
+mean_df = df_2018.groupby('agent_id').mean()[['sale_amount', 'com_agent_net','com_brokerage_net']]
+
+# Rename columns for join
+
+# +
+# Rename columns for join
+agent_df = agent_df.rename(columns={'sale_status': 'transaction_count'})
+
+sum_df = sum_df.rename(columns={'sale_amount': 'sum_sales',
+                                'com_agent_net': 'sum_agent_com',
+                                'com_brokerage_net': 'sum_brokerage_com'})
+
+mean_df = mean_df.rename(columns={'sale_amount': 'avg_sales',
+                                  'com_agent_net': 'avg_agent_com',
+                                  'com_brokerage_net': 'avg_brokerage_com'})
+# -
+
+mean_df.fillna(value=0, inplace=True)
 
 
 
+# Join into one dataframe
+
+agent_df = agent_df.join(sum_df).join(mean_df)
+
+# Add high performer (over 5 mil sum sales) categorical variable
+
+agent_df['high_performer'] = (agent_df.sum_sales > 5000000).astype(int)
+
+# ### Data Sanity/Validation Checks
+
+
+
+# ## Exploration
+
+agent_df.head()
+
+agent_df.describe()
 
 
 
 # ## Modeling
+
+# +
+X = agent_df.drop(columns='high_performer')
+y = agent_df[['high_performer']]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.3, random_state=42)
+# -
+
+X_train.isnull().sum()
+
+rf = RandomForestClassifier(max_depth=3,
+                            random_state=42)
+rf.fit(X_train, y_train)
+
+agent_df.columns
+
+print(rf.feature_importances_)
+
+print('Accuracy of random forest classifier on training set: {:.2f}'
+     .format(rf.score(X_train, y_train)))
+
+
+# +
+def train_test_split_data(agent_df):
+    X = agent_df.drop(columns='high_performer')
+    y = agent_df[['high_performer']]
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.3, random_state=42, stratify=y)
+    return X_train, X_test, y_train, y_test
+
+def model_outputs(agent_df):
+    # Split the data
+    X_train, X_test, y_train, y_test = train_test_split_data(agent_df)
+    # Logistic Regression
+    logistic_regression(X_train, y_train, X)
+    # Random Forest
+    random_forest(X_train, y_train, X)
+    # Decision Tree
+    decision_tree(X_train, y_train, X)
+    # KNN
+    knn(X_train, y_train, X)
+    
+def logistic_regression(X_train, y_train, X):
+    logit = LogisticRegression(C=1,
+                               random_state = 42,
+                               solver='saga')
+    logit.fit(X_train, y_train)
+    y_pred = logit.predict(X_train)
+    y_pred_proba = logit.predict_proba(X_train)
+    #pred_df['log_reg_pred'] = y_pred
+    #pred_df['log_reg_pred_manual'] = np.where(y_pred[1]>=0.75, 1, 0)
+    pred_thresh = pd.Series(np.where(y_pred_proba[1]>=0.75, 1, 0))
+    #pred_df['log_reg_pred_proba'] = y_pred_proba[:,1]
+    print('Accuracy of Logistic Regression classifier on training set: {:.2f}'
+     .format(logit.score(X_train, y_train)))
+    print('---')
+    print(classification_report(y_train, y_pred))
+    print('---')
+    #print(classification_report(y_train, pred_thresh))
+    return
+
+def random_forest(X_train, y_train, X):
+    rf = RandomForestClassifier(bootstrap=True, 
+                            class_weight=None, 
+                            criterion='gini',
+                            min_samples_leaf=3,
+                            n_estimators=100,
+                            max_depth=5, 
+                            random_state=42)
+    rf.fit(X_train, y_train)
+    y_pred = rf.predict(X_train)
+    y_pred_proba = rf.predict_proba(X_train)
+    #agent_df['rf_pred'] = y_pred
+    #agent_df['rf_pred_proba'] = y_pred_proba[:,0]
+    print('Accuracy of Random Forest classifier on training set: {:.2f}'
+     .format(rf.score(X_train, y_train)))
+    print('---')
+    print(classification_report(y_train, y_pred))
+    print('---')
+    return
+
+def decision_tree(X_train, y_train, X):
+    tree = DecisionTreeClassifier(criterion='gini',
+                                  max_depth=5,
+                                  random_state=42)
+    tree.fit(X_train, y_train)
+    y_pred = tree.predict(X_train)
+    y_pred_proba = tree.predict_proba(X_train)
+    #agent_df['tree_pred'] = y_pred
+    #agent_df['tree_pred_proba'] = y_pred_proba[:,0]
+    print('Accuracy of Decision Tree classifier on training set: {:.2f}'
+     .format(tree.score(X_train, y_train)))
+    print('---')
+    print(classification_report(y_train, y_pred))
+    print('---')
+    return
+    
+def knn(X_train, y_train, X):
+    knn = KNeighborsClassifier(n_neighbors=3,
+                               weights='uniform')
+    knn.fit(X_train, y_train)
+    y_pred = knn.predict(X_train)
+    y_pred_proba = knn.predict_proba(X_train)
+    #agent_df['knn_pred'] = y_pred
+    #agent_df['knn_pred_proba'] = y_pred_proba[:,0]
+    print('Accuracy of KNN classifier on training set: {:.2f}'
+     .format(knn.score(X_train, y_train)))
+    print('---')
+    print(classification_report(y_train, y_pred))
+    print('---')
+    return
+
+
+# -
+
+model_outputs(agent_df)
+
+agent_df.log_reg_pred_manual.value_counts()
+
+agent_df.head()
+
+agent_df.log_reg_pred.value_counts()
 
 
