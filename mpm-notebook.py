@@ -15,7 +15,7 @@
 
 # + {"toc": true, "cell_type": "markdown"}
 # <h1>Table of Contents<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Notes" data-toc-modified-id="Notes-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Notes</a></span><ul class="toc-item"><li><span><a href="#Questions" data-toc-modified-id="Questions-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Questions</a></span></li><li><span><a href="#Hypotheses" data-toc-modified-id="Hypotheses-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Hypotheses</a></span></li><li><span><a href="#To-do-list" data-toc-modified-id="To-do-list-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>To-do list</a></span></li><li><span><a href="#Deliverables" data-toc-modified-id="Deliverables-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Deliverables</a></span></li></ul></li><li><span><a href="#Environment" data-toc-modified-id="Environment-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Environment</a></span></li><li><span><a href="#Acquisition" data-toc-modified-id="Acquisition-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Acquisition</a></span></li><li><span><a href="#Preparation" data-toc-modified-id="Preparation-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Preparation</a></span><ul class="toc-item"><li><span><a href="#Lowercase-all-column-names" data-toc-modified-id="Lowercase-all-column-names-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Lowercase all column names</a></span></li><li><span><a href="#Drop-Columns" data-toc-modified-id="Drop-Columns-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Drop Columns</a></span></li><li><span><a href="#Encoding-columns" data-toc-modified-id="Encoding-columns-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Encoding columns</a></span><ul class="toc-item"><li><span><a href="#Various-ID-fields-and-categorical-variables" data-toc-modified-id="Various-ID-fields-and-categorical-variables-4.3.1"><span class="toc-item-num">4.3.1&nbsp;&nbsp;</span>Various ID fields and categorical variables</a></span></li></ul></li><li><span><a href="#Date-Columns" data-toc-modified-id="Date-Columns-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Date Columns</a></span><ul class="toc-item"><li><span><a href="#Correcting-dates" data-toc-modified-id="Correcting-dates-4.4.1"><span class="toc-item-num">4.4.1&nbsp;&nbsp;</span>Correcting dates</a></span></li><li><span><a href="#Convert-dates-to-datetime-type" data-toc-modified-id="Convert-dates-to-datetime-type-4.4.2"><span class="toc-item-num">4.4.2&nbsp;&nbsp;</span>Convert dates to datetime type</a></span></li></ul></li><li><span><a href="#Column-cleanup" data-toc-modified-id="Column-cleanup-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Column cleanup</a></span><ul class="toc-item"><li><span><a href="#Remove-bonus-columns" data-toc-modified-id="Remove-bonus-columns-4.5.1"><span class="toc-item-num">4.5.1&nbsp;&nbsp;</span>Remove bonus columns</a></span></li><li><span><a href="#Imputing-nulls-with-0" data-toc-modified-id="Imputing-nulls-with-0-4.5.2"><span class="toc-item-num">4.5.2&nbsp;&nbsp;</span>Imputing nulls with 0</a></span></li></ul></li><li><span><a href="#Rename-Columns" data-toc-modified-id="Rename-Columns-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>Rename Columns</a></span></li><li><span><a href="#Create-2018-DataFrame" data-toc-modified-id="Create-2018-DataFrame-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>Create 2018 DataFrame</a></span></li><li><span><a href="#Data-Sanity/Validation-Checks" data-toc-modified-id="Data-Sanity/Validation-Checks-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>Data Sanity/Validation Checks</a></span></li></ul></li><li><span><a href="#Exploration" data-toc-modified-id="Exploration-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Exploration</a></span></li><li><span><a href="#Modeling" data-toc-modified-id="Modeling-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Modeling</a></span></li></ul></div>
+# <div class="toc"><ul class="toc-item"><li><span><a href="#Notes" data-toc-modified-id="Notes-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Notes</a></span><ul class="toc-item"><li><span><a href="#Questions" data-toc-modified-id="Questions-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Questions</a></span></li><li><span><a href="#Hypotheses" data-toc-modified-id="Hypotheses-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Hypotheses</a></span></li><li><span><a href="#To-do-list" data-toc-modified-id="To-do-list-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>To-do list</a></span></li><li><span><a href="#Deliverables" data-toc-modified-id="Deliverables-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Deliverables</a></span></li><li><span><a href="#Data-Dictionary" data-toc-modified-id="Data-Dictionary-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Data Dictionary</a></span></li></ul></li><li><span><a href="#Environment" data-toc-modified-id="Environment-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Environment</a></span></li><li><span><a href="#Acquisition" data-toc-modified-id="Acquisition-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Acquisition</a></span></li><li><span><a href="#Preparation" data-toc-modified-id="Preparation-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Preparation</a></span><ul class="toc-item"><li><span><a href="#Lowercase-all-column-names" data-toc-modified-id="Lowercase-all-column-names-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Lowercase all column names</a></span></li><li><span><a href="#Drop-Columns" data-toc-modified-id="Drop-Columns-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Drop Columns</a></span></li><li><span><a href="#Encoding-columns" data-toc-modified-id="Encoding-columns-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Encoding columns</a></span><ul class="toc-item"><li><span><a href="#Various-ID-fields-and-categorical-variables" data-toc-modified-id="Various-ID-fields-and-categorical-variables-4.3.1"><span class="toc-item-num">4.3.1&nbsp;&nbsp;</span>Various ID fields and categorical variables</a></span></li></ul></li><li><span><a href="#Date-Columns" data-toc-modified-id="Date-Columns-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Date Columns</a></span><ul class="toc-item"><li><span><a href="#Correcting-dates" data-toc-modified-id="Correcting-dates-4.4.1"><span class="toc-item-num">4.4.1&nbsp;&nbsp;</span>Correcting dates</a></span></li><li><span><a href="#Convert-dates-to-datetime-type" data-toc-modified-id="Convert-dates-to-datetime-type-4.4.2"><span class="toc-item-num">4.4.2&nbsp;&nbsp;</span>Convert dates to datetime type</a></span></li></ul></li><li><span><a href="#Column-cleanup" data-toc-modified-id="Column-cleanup-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Column cleanup</a></span><ul class="toc-item"><li><span><a href="#Remove-bonus-columns" data-toc-modified-id="Remove-bonus-columns-4.5.1"><span class="toc-item-num">4.5.1&nbsp;&nbsp;</span>Remove bonus columns</a></span></li><li><span><a href="#Imputing-nulls-with-0" data-toc-modified-id="Imputing-nulls-with-0-4.5.2"><span class="toc-item-num">4.5.2&nbsp;&nbsp;</span>Imputing nulls with 0</a></span></li></ul></li><li><span><a href="#Rename-Columns" data-toc-modified-id="Rename-Columns-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>Rename Columns</a></span></li><li><span><a href="#Create-2018-DataFrame" data-toc-modified-id="Create-2018-DataFrame-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>Create 2018 DataFrame</a></span></li><li><span><a href="#Data-Sanity/Validation-Checks" data-toc-modified-id="Data-Sanity/Validation-Checks-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>Data Sanity/Validation Checks</a></span></li></ul></li><li><span><a href="#Exploration" data-toc-modified-id="Exploration-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Exploration</a></span></li><li><span><a href="#Modeling" data-toc-modified-id="Modeling-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Modeling</a></span></li></ul></div>
 # -
 
 # ## Notes
@@ -47,6 +47,8 @@
 # * Can we use mean/median units and volume as a metric?
 # * More information on agents?  Age, Gender, City, Vehicle, Full/Part Time Status, Favorite Pizza Toppings
 # * Why do we have NaNs in gci and brokerage_net for transactions that were COMPLETED?
+# * What does "other" mean for tags/property_use (we will drop it until we get clarification)?
+# * Which homes in terms of price are the best to sell?
 
 # ### Hypotheses
 # * Standard Commission Type will positively correlate with units (higher commissions promote more sales activity)
@@ -59,6 +61,56 @@
 # - [ ] data dictionary
 
 # ### Deliverables
+
+# ### Data Dictionary
+
+# - **agent_id** -> unique identifier for each agent
+# - **agent_name** -> bogus name for anonymity reasons
+# - **commission_anniversary** -> when the time comes to renegotiate the agent's split rate
+# - **account_id** -> unique identifier of parent company
+# - **brokerage_id** -> unique identifier for a subunit of a parent company (i.e., each brokerage_id is a subunit of account_id)
+# - **brokerage_name** -> bogus name for anonymity reasons
+# - **commission_schedule_id** -> unique identifier for a commission schedule
+# - **commission_schedule_effective_start_at** -> when the commission schedule starts
+# - **commission_schedule_effective_end_at** -> when the commission schedule ends
+# - **commission_schedule_active** -> whether the commmission schedule is active or not
+# - **commission_schedule_strategy/com_plan** -> how the commission is calculated
+# - **transaction_id** -> a unique identifier for the transaction
+# - **transaction_number** -> BT 'year' 'month' 'day' 'transaction_count'
+# 	- unique to a single account, use transaction_id
+# - **transaction_contracted_at** -> when the buyers and sellers signed contract to begin transaction
+# - **transaction_closed_at** -> when the transaction was closed
+# - **transaction_effective_at/sale_date** -> an override for when the transaction actually closed (there might be some last minute changes)
+# - **transaction_status/sale_status** -> Open, ~DONT WORRY ABOUT THESE~ ,Cda Sent, Complete, or Fell through
+# - **transaction_sales_amount/sale_amount** ->
+# - **transaction_list_amount** -> set by users (WILL TRY TO PULL FROM LISTING SIDE SYSTEM)
+# - **earned_side_count/com_split** -> a strange representation of how much credit an agent gets for a transaction
+#     - can be split between agents on a side
+# - **earned_volume** -> typically is the same as the sales amount
+# 	- can be split between agents on a side
+# - **tags/property_use** -> usage of the property (i.e., residential)
+# - **transaction_side/trans_side** ->
+# 	- Listing Side -> The agent is representing the seller of the property
+# 	- Selling Side -> The agent is representing the buyer of the property
+# - **transaction_price_override** ->
+# - **standard_commission_type** -> the regular payout from a transaction
+# - **standard_commission_gci_amount/com_gross** ->
+# 	- the 3% || base value the brokerage took as commission
+# 	- before splitting with agent
+# - **standard_commission_agent_net_amount/com_agent_net** -> how much the agent took home
+# - **standard_commission_brokerage_net_amount/com_brokerage_net** -> how much the brokerage took
+# - **total_fees_charged_against_brokerage** -> the sum total of all the fees charged to the brokerage
+# - **total_fees_charged_against_agent** -> the sum total of all fees charged to the agent; these can be paid by the brokerage
+# - **total_fees_paid_on_transaction** -> $total\_fees\_charged\_against\_agent + total\_fees\_charged\_against\_brokerage$
+# - **total_liabilities_against_brokerage** -> the amount the brokerage is liable to pay out to other parties.
+# 	- These parties include the franchise, marketing, vendors, brokerage concessions and many more...
+# - **total_liabilities_against_agent** -> the amount the agent is liable to pay to other parties.
+# - **total_liabilities_on_transaction** -> $total\_liabilities\_against\_brokerage + total\_liabilities\_against\_the\_agent$
+# - **total_brokerage_income_collected_from_agent_fees** -> $total\_fees\_charged\_against\_agent - total\_liabilities\_against\_the\_agent$
+# - **final_brokerage_income_after_all_liabilities_are_paid_out** -> $brokerage\_net\_amount + total\_brokerage\_income\_collected\_from\_agent\_fees - total\_liabilities\_on\_transaction$
+# - **bonus_commission_type** -> any extra money paid out
+# - **bonus_commission_agent_net_amount** ->
+# - **bonus_commission_brokerage_net_amount** ->
 
 # ## Environment 
 
