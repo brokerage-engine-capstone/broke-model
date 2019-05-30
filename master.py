@@ -15,7 +15,7 @@
 
 # + {"toc": true, "cell_type": "markdown"}
 # <h1>Table of Contents<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Notes" data-toc-modified-id="Notes-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Notes</a></span><ul class="toc-item"><li><span><a href="#Questions" data-toc-modified-id="Questions-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Questions</a></span></li><li><span><a href="#Hypotheses" data-toc-modified-id="Hypotheses-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Hypotheses</a></span></li><li><span><a href="#To-do-list" data-toc-modified-id="To-do-list-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>To-do list</a></span></li><li><span><a href="#Deliverables" data-toc-modified-id="Deliverables-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Deliverables</a></span></li></ul></li><li><span><a href="#Environment" data-toc-modified-id="Environment-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Environment</a></span></li><li><span><a href="#Acquisition" data-toc-modified-id="Acquisition-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Acquisition</a></span></li><li><span><a href="#Preparation" data-toc-modified-id="Preparation-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Preparation</a></span><ul class="toc-item"><li><span><a href="#Lowercasing-all-column-names" data-toc-modified-id="Lowercasing-all-column-names-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Lowercasing all column names</a></span></li><li><span><a href="#Drop-Columns" data-toc-modified-id="Drop-Columns-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Drop Columns</a></span><ul class="toc-item"><li><span><a href="#agent_name" data-toc-modified-id="agent_name-4.2.1"><span class="toc-item-num">4.2.1&nbsp;&nbsp;</span>agent_name</a></span></li><li><span><a href="#commission_anniversary" data-toc-modified-id="commission_anniversary-4.2.2"><span class="toc-item-num">4.2.2&nbsp;&nbsp;</span>commission_anniversary</a></span></li><li><span><a href="#brokerage_name" data-toc-modified-id="brokerage_name-4.2.3"><span class="toc-item-num">4.2.3&nbsp;&nbsp;</span>brokerage_name</a></span></li><li><span><a href="#commission_schedule_id" data-toc-modified-id="commission_schedule_id-4.2.4"><span class="toc-item-num">4.2.4&nbsp;&nbsp;</span>commission_schedule_id</a></span></li><li><span><a href="#commission_schedule_active" data-toc-modified-id="commission_schedule_active-4.2.5"><span class="toc-item-num">4.2.5&nbsp;&nbsp;</span>commission_schedule_active</a></span></li><li><span><a href="#transaction_number" data-toc-modified-id="transaction_number-4.2.6"><span class="toc-item-num">4.2.6&nbsp;&nbsp;</span>transaction_number</a></span></li><li><span><a href="#transaction_closed_at" data-toc-modified-id="transaction_closed_at-4.2.7"><span class="toc-item-num">4.2.7&nbsp;&nbsp;</span>transaction_closed_at</a></span></li><li><span><a href="#transaction_contracted_at" data-toc-modified-id="transaction_contracted_at-4.2.8"><span class="toc-item-num">4.2.8&nbsp;&nbsp;</span>transaction_contracted_at</a></span></li><li><span><a href="#transaction_list_amount" data-toc-modified-id="transaction_list_amount-4.2.9"><span class="toc-item-num">4.2.9&nbsp;&nbsp;</span>transaction_list_amount</a></span></li><li><span><a href="#standard_commission_type" data-toc-modified-id="standard_commission_type-4.2.10"><span class="toc-item-num">4.2.10&nbsp;&nbsp;</span>standard_commission_type</a></span></li><li><span><a href="#transaction_price_override" data-toc-modified-id="transaction_price_override-4.2.11"><span class="toc-item-num">4.2.11&nbsp;&nbsp;</span>transaction_price_override</a></span></li><li><span><a href="#total_fees_charged_against_agent" data-toc-modified-id="total_fees_charged_against_agent-4.2.12"><span class="toc-item-num">4.2.12&nbsp;&nbsp;</span>total_fees_charged_against_agent</a></span></li><li><span><a href="#total_fees_charged_against_brokerage" data-toc-modified-id="total_fees_charged_against_brokerage-4.2.13"><span class="toc-item-num">4.2.13&nbsp;&nbsp;</span>total_fees_charged_against_brokerage</a></span></li><li><span><a href="#total_liabilities_against_brokerage" data-toc-modified-id="total_liabilities_against_brokerage-4.2.14"><span class="toc-item-num">4.2.14&nbsp;&nbsp;</span>total_liabilities_against_brokerage</a></span></li><li><span><a href="#earned_volume" data-toc-modified-id="earned_volume-4.2.15"><span class="toc-item-num">4.2.15&nbsp;&nbsp;</span>earned_volume</a></span></li><li><span><a href="#commission_schedule_effective_start_at-&amp;-commission_schedule_effective_end_at" data-toc-modified-id="commission_schedule_effective_start_at-&amp;-commission_schedule_effective_end_at-4.2.16"><span class="toc-item-num">4.2.16&nbsp;&nbsp;</span>commission_schedule_effective_start_at &amp; commission_schedule_effective_end_at</a></span></li><li><span><a href="#Fee-and-liability-columns" data-toc-modified-id="Fee-and-liability-columns-4.2.17"><span class="toc-item-num">4.2.17&nbsp;&nbsp;</span>Fee and liability columns</a></span></li></ul></li><li><span><a href="#Encoding-various-ID-fields-for-readability-and-future-usage." data-toc-modified-id="Encoding-various-ID-fields-for-readability-and-future-usage.-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Encoding various ID fields for readability and future usage.</a></span></li><li><span><a href="#Correcting-dates" data-toc-modified-id="Correcting-dates-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Correcting dates</a></span></li><li><span><a href="#Convert-dates-to-datetime-type" data-toc-modified-id="Convert-dates-to-datetime-type-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Convert dates to datetime type</a></span></li><li><span><a href="#Column-cleanup" data-toc-modified-id="Column-cleanup-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>Column cleanup</a></span><ul class="toc-item"><li><span><a href="#Remove-bonus-columns" data-toc-modified-id="Remove-bonus-columns-4.6.1"><span class="toc-item-num">4.6.1&nbsp;&nbsp;</span>Remove bonus columns</a></span></li><li><span><a href="#Imputing-nulls-with-0" data-toc-modified-id="Imputing-nulls-with-0-4.6.2"><span class="toc-item-num">4.6.2&nbsp;&nbsp;</span>Imputing nulls with 0</a></span></li></ul></li><li><span><a href="#Rename-Columns" data-toc-modified-id="Rename-Columns-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>Rename Columns</a></span></li></ul></li><li><span><a href="#Exploration" data-toc-modified-id="Exploration-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Exploration</a></span></li><li><span><a href="#Modeling" data-toc-modified-id="Modeling-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Modeling</a></span></li></ul></div>
+# <div class="toc"><ul class="toc-item"><li><span><a href="#Notes" data-toc-modified-id="Notes-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Notes</a></span><ul class="toc-item"><li><span><a href="#Questions" data-toc-modified-id="Questions-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Questions</a></span></li><li><span><a href="#Hypotheses" data-toc-modified-id="Hypotheses-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Hypotheses</a></span></li><li><span><a href="#To-do-list" data-toc-modified-id="To-do-list-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>To-do list</a></span></li><li><span><a href="#Deliverables" data-toc-modified-id="Deliverables-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Deliverables</a></span></li></ul></li><li><span><a href="#Environment" data-toc-modified-id="Environment-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Environment</a></span></li><li><span><a href="#Acquisition" data-toc-modified-id="Acquisition-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Acquisition</a></span></li><li><span><a href="#Preparation" data-toc-modified-id="Preparation-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Preparation</a></span><ul class="toc-item"><li><span><a href="#Lowercase-all-column-names" data-toc-modified-id="Lowercase-all-column-names-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Lowercase all column names</a></span></li><li><span><a href="#Drop-Columns" data-toc-modified-id="Drop-Columns-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Drop Columns</a></span></li><li><span><a href="#Encoding-columns" data-toc-modified-id="Encoding-columns-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Encoding columns</a></span><ul class="toc-item"><li><span><a href="#Various-ID-fields-and-categorical-variables" data-toc-modified-id="Various-ID-fields-and-categorical-variables-4.3.1"><span class="toc-item-num">4.3.1&nbsp;&nbsp;</span>Various ID fields and categorical variables</a></span></li></ul></li><li><span><a href="#Date-Columns" data-toc-modified-id="Date-Columns-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Date Columns</a></span><ul class="toc-item"><li><span><a href="#Correcting-dates" data-toc-modified-id="Correcting-dates-4.4.1"><span class="toc-item-num">4.4.1&nbsp;&nbsp;</span>Correcting dates</a></span></li><li><span><a href="#Convert-dates-to-datetime-type" data-toc-modified-id="Convert-dates-to-datetime-type-4.4.2"><span class="toc-item-num">4.4.2&nbsp;&nbsp;</span>Convert dates to datetime type</a></span></li></ul></li><li><span><a href="#Column-cleanup" data-toc-modified-id="Column-cleanup-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Column cleanup</a></span><ul class="toc-item"><li><span><a href="#Remove-bonus-columns" data-toc-modified-id="Remove-bonus-columns-4.5.1"><span class="toc-item-num">4.5.1&nbsp;&nbsp;</span>Remove bonus columns</a></span></li><li><span><a href="#Imputing-nulls-with-0" data-toc-modified-id="Imputing-nulls-with-0-4.5.2"><span class="toc-item-num">4.5.2&nbsp;&nbsp;</span>Imputing nulls with 0</a></span></li></ul></li><li><span><a href="#Rename-Columns" data-toc-modified-id="Rename-Columns-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>Rename Columns</a></span></li><li><span><a href="#Create-2018-DataFrame" data-toc-modified-id="Create-2018-DataFrame-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>Create 2018 DataFrame</a></span></li><li><span><a href="#Data-Sanity/Validation-Checks" data-toc-modified-id="Data-Sanity/Validation-Checks-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>Data Sanity/Validation Checks</a></span></li></ul></li><li><span><a href="#Exploration" data-toc-modified-id="Exploration-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Exploration</a></span></li><li><span><a href="#Modeling" data-toc-modified-id="Modeling-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Modeling</a></span></li></ul></div>
 # -
 
 # ## Notes
@@ -89,122 +89,70 @@ df_raw.shape
 
 # ## Preparation
 
-# ### Lowercasing all column names
+# ### Lowercase all column names
 
 df.rename(columns=lambda col: col.lower(), inplace=True)
 
 # ### Drop Columns
 
-# #### agent_name
-#
 # Agent ID provides a unique identifier already.
-
 df.drop(columns='agent_name', inplace=True)
-
-# #### commission_anniversary
-#
 # Most of the data is missing and it's not clear what value this data provides.
-
-df.drop(columns='commission_anniversary', inplace=True)  # not useful information
-
-# #### brokerage_name
-#
+df.drop(columns='commission_anniversary', inplace=True)
 # Brokerage ID provides a unique identifier.
-
 df.drop(columns='brokerage_name', inplace=True)
-
-# #### commission_schedule_id
-#
 # It's not clear what value this data provides.
-
-df.drop(columns='commission_schedule_id', inplace=True)  # not useful information
-
-# #### commission_schedule_active
-#
-# Some rows say TRUE when they should be FALSE. We cannot make sense of it now and may want to revisit and correct these. This column may be useful if we add a feature representing the number of commission schedules the realtor has been through.
-
+df.drop(columns='commission_schedule_id', inplace=True)
+# Some rows say TRUE when they should be FALSE. We cannot make sense of it now
+# and may want to revisit and correct these. This column may be useful if we add
+# a feature representing the number of commission schedules the realtor has been through.
 df.drop(columns='commission_schedule_active', inplace=True)
-
-# #### transaction_number
-#
 # This column provides the same information as transaction_id and transaction_effective_at.
-
 df.drop(columns='transaction_number', inplace=True)
-
-# #### transaction_closed_at
-#
 # The column transaction_effective_at provides better information.
-
 df.drop(columns='transaction_closed_at', inplace=True)
-
-# #### transaction_contracted_at
-#
-# This column marks when the realtor/customer signed a contract which isn't helpful for this part of the project.
-
+# This column marks when the realtor/customer signed a contract which isn't
+# helpful for this part of the project.
 df.drop(columns='transaction_contracted_at', inplace=True)
-
-# #### transaction_list_amount
-#
 # This column is has few non-null entries. We may get better information from another csv.
-
 df.drop(columns='transaction_list_amount', inplace=True)
-
-# #### standard_commission_type
-#
 # It is either one value or null and is not useful.
-
 df.drop(columns='standard_commission_type', inplace=True)
-
-# #### transaction_price_override
 # This information is about commission adjustments, which we are not using at this time.
-
 df.drop(columns='transaction_price_override', inplace=True)
-
-# #### total_fees_charged_against_agent
-#
-# This column is not relevant to predicting our target variable. We may want to revisit these fees and liabilities columns to predict profitability.
-
+# This column is not relevant to predicting our target variable. We may want to revisit
+# these fees and liabilities columns to predict profitability.
 df.drop(columns='total_fees_charged_against_agent', inplace=True)
-
-# #### total_fees_charged_against_brokerage
-#
-# This column is not relevant to predicting our target variable. We may want to revisit these fees and liabilities columns to predict profitability.
-
+# This column is not relevant to predicting our target variable. We may want to revisit these
+# fees and liabilities columns to predict profitability.
 df.drop(columns='total_fees_charged_against_brokerage', inplace=True)
-
-# #### total_liabilities_against_brokerage
-#
-# This column is not relevant to predicting our target variable. We may want to revisit these fees and liabilities columns to predict profitability.
-
+# This column is not relevant to predicting our target variable. We may want to revisit these
+# fees and liabilities columns to predict profitability.
 df.drop(columns='total_liabilities_against_brokerage', inplace=True)
-
-# #### earned_volume
-# This columns is mostly the product of earned_sales_amount and transaction_sales_amount
-
+# This columns is mostly the product of earned_sales_amount and transaction_sales_amount.
 df.drop(columns='earned_volume', inplace=True)
-
-# #### commission_schedule_effective_start_at & commission_schedule_effective_end_at
 # This columns speak to when agents' commission plan starts and ends and is not necessary for our project.
-
 df.drop(columns='commission_schedule_effective_start_at', inplace=True)
 df.drop(columns='commission_schedule_effective_end_at', inplace=True)
-
-
-# #### Fee and liability columns
 # Dropping these as they're not useful for this type of predictive model.
-
 df.drop(columns=(['total_fees_paid_on_transaction',
                   'total_liabilities_against_agent',
                   'total_liabilities_on_transaction',
                   'total_brokerage_income_collected_from_agent_fees',
                   'final_brokerage_income_after_all_liabilities_are_paid_out'
-                 
-                 ]),
-                 inplace=True)
 
-# ### Encoding various ID fields for readability and future usage.
+                  ]),
+        inplace=True)
 
-# The raw values are long randomized strings whose uniqueness is the only thing of value.
+# ### Encoding columns
+
+# #### Various ID fields and categorical variables
+
+# For readability and future usage
+#
+# The raw values for the \_id columns are long randomized strings whose uniqueness is the only thing of value.
+#
+# commission_schedule_strategy and transaction_side are categorical variables.
 
 # +
 to_encode = ['agent_id',
@@ -221,11 +169,13 @@ for col in to_encode:
     df[col] = le.transform(df[col])
 # -
 
-# ### Correcting dates
+# ### Date Columns
 
+# #### Correcting dates
 # These dates were corrected because they had bad years. The corrected year for transaction_contracted_at was inferred from the dates for transaction_closed_at and transaction_effective_at columns. A similar approach was used for correcting transaction_effective_at column.
 
 # +
+# transaction_contracted_at has been dropped
 # Transactions contracted at errors fixed
 # df.loc[df.transaction_id == 7686, 'transaction_contracted_at'] = "2018-07-31 12:00:00 UTC"
 # df.loc[df.transaction_id == 3874, 'transaction_contracted_at'] = "2019-04-17 04:56:02 UTC"
@@ -253,7 +203,7 @@ df.loc[df.transaction_id == 3423, 'transaction_effective_at'] = "2019-11-12 12:0
 df.loc[df.transaction_id == 5141, 'transaction_effective_at'] = "2019-06-14 12:00:00 UTC"
 # -
 
-# ### Convert dates to datetime type
+# #### Convert dates to datetime type
 # Drop the time as well
 
 # df['commission_schedule_effective_start_at'] = pd.to_datetime(df.commission_schedule_effective_start_at, errors = 'coerce')
@@ -298,11 +248,13 @@ new_col_names = {'commission_schedule_strategy': 'com_plan',
 df = df.rename(columns=new_col_names)
 # -
 
-# ## Exploration
+pprint(list(df_raw.columns))
 
-df = df.assign(trans_year=df.sale_date.dt.year)
-df = df.assign(trans_quarter=df.sale_date.dt.quarter)
-agent_perf = df.groupby(["agent_id", "trans_year"])[["sale_amount"]].sum().reset_index()
+# ### Create 2018 DataFrame
+
+df = df.assign(sale_year=df.sale_date.dt.year)
+df = df.assign(sale_quarter=df.sale_date.dt.quarter)
+agent_perf = df.groupby(["agent_id", "sale_year"])[["sale_amount"]].sum().reset_index()
 
 df.property_use = df.property_use.fillna(value='Other')
 
@@ -315,17 +267,63 @@ df2 = df[(df.property_use == 'Residential') | (df.property_use == 'Other')]
 df2.property_use.value_counts()
 
 df[df['sale_status'] == 'COMPLETE']\
-    .groupby(['trans_quarter', 'trans_year'])\
+    .groupby(['sale_quarter', 'sale_year'])\
     .mean()['sale_amount']
 
 df[df['sale_status'] == 'COMPLETE']\
-    .groupby(['agent_id', 'trans_year', 'trans_quarter'])\
+    .groupby(['agent_id', 'sale_year', 'sale_quarter'])\
     .count()['transaction_id']\
     .reset_index()\
-    .groupby('trans_quarter')\
+    .groupby('sale_quarter')\
     .mean()['transaction_id']
 
 df[df['sale_status'] == 'COMPLETE'].groupby('agent_id').count()['transaction_id'].value_counts(dropna=False)
+
+# Get only completed transactions
+
+df_complete = df[df['sale_status']=='COMPLETE']
+
+# Get only 2018 data
+
+df_2018 = df_complete[df_complete['sale_year']==2018]
+
+# Calculate summary statistics
+
+# Counting transactions
+agent_df = df_2018.groupby('agent_id').count()[['sale_status']]
+# Sum
+sum_df = df_2018.groupby('agent_id').sum()[['sale_amount', 'com_agent_net','com_brokerage_net']]
+# Avg
+mean_df = df_2018.groupby('agent_id').mean()[['sale_amount', 'com_agent_net','com_brokerage_net']]
+
+# Rename columns for join
+
+# +
+# Rename columns for join
+agent_df = agent_df.rename(columns={'sale_status': 'transaction_count'})
+
+sum_df = sum_df.rename(columns={'sale_amount': 'sum_sales',
+                                'com_agent_net': 'sum_agent_com',
+                                'com_brokerage_net': 'sum_brokerage_com'})
+
+mean_df = mean_df.rename(columns={'sale_amount': 'avg_sales',
+                                  'com_agent_net': 'avg_agent_com',
+                                  'com_brokerage_net': 'avg_brokerage_com'})
+# -
+
+# Join into one dataframe
+
+agent_df = agent_df.join(sum_df).join(mean_df)
+
+# Add high performer (over 5 mil sum sales) categorical variable
+
+agent_df['high_performer'] = (agent_df.sum_sales > 5000000).astype(int)
+
+# ### Data Sanity/Validation Checks
+
+
+
+# ## Exploration
 
 
 
