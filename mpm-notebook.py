@@ -15,7 +15,7 @@
 
 # + {"toc": true, "cell_type": "markdown"}
 # <h1>Table of Contents<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Notes" data-toc-modified-id="Notes-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Notes</a></span><ul class="toc-item"><li><span><a href="#Questions" data-toc-modified-id="Questions-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Questions</a></span></li><li><span><a href="#Hypotheses" data-toc-modified-id="Hypotheses-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Hypotheses</a></span></li><li><span><a href="#To-do-list" data-toc-modified-id="To-do-list-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>To-do list</a></span></li><li><span><a href="#Deliverables" data-toc-modified-id="Deliverables-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Deliverables</a></span></li><li><span><a href="#Data-Dictionary" data-toc-modified-id="Data-Dictionary-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Data Dictionary</a></span></li></ul></li><li><span><a href="#Environment" data-toc-modified-id="Environment-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Environment</a></span></li><li><span><a href="#Acquisition" data-toc-modified-id="Acquisition-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Acquisition</a></span></li><li><span><a href="#Preparation" data-toc-modified-id="Preparation-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Preparation</a></span><ul class="toc-item"><li><span><a href="#Lowercase-all-column-names" data-toc-modified-id="Lowercase-all-column-names-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Lowercase all column names</a></span></li><li><span><a href="#Drop-Columns" data-toc-modified-id="Drop-Columns-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Drop Columns</a></span></li><li><span><a href="#Encoding-columns" data-toc-modified-id="Encoding-columns-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Encoding columns</a></span><ul class="toc-item"><li><span><a href="#Various-ID-fields-and-categorical-variables" data-toc-modified-id="Various-ID-fields-and-categorical-variables-4.3.1"><span class="toc-item-num">4.3.1&nbsp;&nbsp;</span>Various ID fields and categorical variables</a></span></li></ul></li><li><span><a href="#Date-Columns" data-toc-modified-id="Date-Columns-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Date Columns</a></span><ul class="toc-item"><li><span><a href="#Correcting-dates" data-toc-modified-id="Correcting-dates-4.4.1"><span class="toc-item-num">4.4.1&nbsp;&nbsp;</span>Correcting dates</a></span></li><li><span><a href="#Convert-dates-to-datetime-type" data-toc-modified-id="Convert-dates-to-datetime-type-4.4.2"><span class="toc-item-num">4.4.2&nbsp;&nbsp;</span>Convert dates to datetime type</a></span></li></ul></li><li><span><a href="#Column-cleanup" data-toc-modified-id="Column-cleanup-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Column cleanup</a></span><ul class="toc-item"><li><span><a href="#Remove-bonus-columns" data-toc-modified-id="Remove-bonus-columns-4.5.1"><span class="toc-item-num">4.5.1&nbsp;&nbsp;</span>Remove bonus columns</a></span></li><li><span><a href="#Imputing-nulls-with-0" data-toc-modified-id="Imputing-nulls-with-0-4.5.2"><span class="toc-item-num">4.5.2&nbsp;&nbsp;</span>Imputing nulls with 0</a></span></li></ul></li><li><span><a href="#Rename-Columns" data-toc-modified-id="Rename-Columns-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>Rename Columns</a></span></li><li><span><a href="#Create-2018-DataFrame" data-toc-modified-id="Create-2018-DataFrame-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>Create 2018 DataFrame</a></span></li><li><span><a href="#Data-Sanity/Validation-Checks" data-toc-modified-id="Data-Sanity/Validation-Checks-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>Data Sanity/Validation Checks</a></span></li></ul></li><li><span><a href="#Exploration" data-toc-modified-id="Exploration-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Exploration</a></span></li><li><span><a href="#Modeling" data-toc-modified-id="Modeling-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Modeling</a></span><ul class="toc-item"><li><span><a href="#Train-test-Split" data-toc-modified-id="Train-test-Split-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Train-test Split</a></span></li><li><span><a href="#Logistic-Regression" data-toc-modified-id="Logistic-Regression-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Logistic Regression</a></span></li><li><span><a href="#Decision-Tree" data-toc-modified-id="Decision-Tree-6.3"><span class="toc-item-num">6.3&nbsp;&nbsp;</span>Decision Tree</a></span></li><li><span><a href="#KNN" data-toc-modified-id="KNN-6.4"><span class="toc-item-num">6.4&nbsp;&nbsp;</span>KNN</a></span></li><li><span><a href="#Random-Forest" data-toc-modified-id="Random-Forest-6.5"><span class="toc-item-num">6.5&nbsp;&nbsp;</span>Random Forest</a></span></li></ul></li></ul></div>
+# <div class="toc"><ul class="toc-item"><li><span><a href="#Notes" data-toc-modified-id="Notes-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Notes</a></span><ul class="toc-item"><li><span><a href="#Questions" data-toc-modified-id="Questions-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Questions</a></span></li><li><span><a href="#Hypotheses" data-toc-modified-id="Hypotheses-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Hypotheses</a></span></li><li><span><a href="#To-do-list" data-toc-modified-id="To-do-list-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>To-do list</a></span></li><li><span><a href="#Deliverables" data-toc-modified-id="Deliverables-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Deliverables</a></span></li><li><span><a href="#Data-Dictionary" data-toc-modified-id="Data-Dictionary-1.5"><span class="toc-item-num">1.5&nbsp;&nbsp;</span>Data Dictionary</a></span></li></ul></li><li><span><a href="#Environment" data-toc-modified-id="Environment-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Environment</a></span></li><li><span><a href="#Acquisition" data-toc-modified-id="Acquisition-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Acquisition</a></span></li><li><span><a href="#Preparation" data-toc-modified-id="Preparation-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Preparation</a></span><ul class="toc-item"><li><span><a href="#Lowercase-all-column-names" data-toc-modified-id="Lowercase-all-column-names-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Lowercase all column names</a></span></li><li><span><a href="#Drop-Columns" data-toc-modified-id="Drop-Columns-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Drop Columns</a></span></li><li><span><a href="#Encoding-columns" data-toc-modified-id="Encoding-columns-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Encoding columns</a></span><ul class="toc-item"><li><span><a href="#Various-ID-fields-and-categorical-variables" data-toc-modified-id="Various-ID-fields-and-categorical-variables-4.3.1"><span class="toc-item-num">4.3.1&nbsp;&nbsp;</span>Various ID fields and categorical variables</a></span></li></ul></li><li><span><a href="#Date-Columns" data-toc-modified-id="Date-Columns-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>Date Columns</a></span><ul class="toc-item"><li><span><a href="#Correcting-dates" data-toc-modified-id="Correcting-dates-4.4.1"><span class="toc-item-num">4.4.1&nbsp;&nbsp;</span>Correcting dates</a></span></li><li><span><a href="#Convert-dates-to-datetime-type" data-toc-modified-id="Convert-dates-to-datetime-type-4.4.2"><span class="toc-item-num">4.4.2&nbsp;&nbsp;</span>Convert dates to datetime type</a></span></li></ul></li><li><span><a href="#Column-cleanup" data-toc-modified-id="Column-cleanup-4.5"><span class="toc-item-num">4.5&nbsp;&nbsp;</span>Column cleanup</a></span><ul class="toc-item"><li><span><a href="#Remove-bonus-columns" data-toc-modified-id="Remove-bonus-columns-4.5.1"><span class="toc-item-num">4.5.1&nbsp;&nbsp;</span>Remove bonus columns</a></span></li><li><span><a href="#Imputing-nulls-with-0" data-toc-modified-id="Imputing-nulls-with-0-4.5.2"><span class="toc-item-num">4.5.2&nbsp;&nbsp;</span>Imputing nulls with 0</a></span></li></ul></li><li><span><a href="#Rename-Columns" data-toc-modified-id="Rename-Columns-4.6"><span class="toc-item-num">4.6&nbsp;&nbsp;</span>Rename Columns</a></span></li><li><span><a href="#Create-2018-DataFrame" data-toc-modified-id="Create-2018-DataFrame-4.7"><span class="toc-item-num">4.7&nbsp;&nbsp;</span>Create 2018 DataFrame</a></span></li><li><span><a href="#Data-Sanity/Validation-Checks" data-toc-modified-id="Data-Sanity/Validation-Checks-4.8"><span class="toc-item-num">4.8&nbsp;&nbsp;</span>Data Sanity/Validation Checks</a></span></li></ul></li><li><span><a href="#Exploration" data-toc-modified-id="Exploration-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Exploration</a></span></li><li><span><a href="#Modeling" data-toc-modified-id="Modeling-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Modeling</a></span><ul class="toc-item"><li><span><a href="#Train-test-Split" data-toc-modified-id="Train-test-Split-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Train-test Split</a></span><ul class="toc-item"><li><span><a href="#Logistic-Regression" data-toc-modified-id="Logistic-Regression-6.1.1"><span class="toc-item-num">6.1.1&nbsp;&nbsp;</span>Logistic Regression</a></span></li><li><span><a href="#Decision-Tree" data-toc-modified-id="Decision-Tree-6.1.2"><span class="toc-item-num">6.1.2&nbsp;&nbsp;</span>Decision Tree</a></span></li><li><span><a href="#KNN" data-toc-modified-id="KNN-6.1.3"><span class="toc-item-num">6.1.3&nbsp;&nbsp;</span>KNN</a></span></li><li><span><a href="#Random-Forest" data-toc-modified-id="Random-Forest-6.1.4"><span class="toc-item-num">6.1.4&nbsp;&nbsp;</span>Random Forest</a></span></li></ul></li><li><span><a href="#K-Fold-Cross-Validation" data-toc-modified-id="K-Fold-Cross-Validation-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>K-Fold Cross Validation</a></span><ul class="toc-item"><li><span><a href="#Logistic-Regression" data-toc-modified-id="Logistic-Regression-6.2.1"><span class="toc-item-num">6.2.1&nbsp;&nbsp;</span>Logistic Regression</a></span></li><li><span><a href="#Decision-Tree" data-toc-modified-id="Decision-Tree-6.2.2"><span class="toc-item-num">6.2.2&nbsp;&nbsp;</span>Decision Tree</a></span></li></ul></li></ul></li></ul></div>
 # -
 
 # ## Notes
@@ -26,10 +26,16 @@
 #     - compare first five months in 2018 and in 2019. find what percentage they are in 2019 of 2018 amount. compare each agent's results to the total to see if there may be a market downturn.
 #     - we may want to classify agents. are they a quantity seller or a quality?
 #     - we may want to create two models. one for residential and one for commercial
-# - [ ] filter out anything that says "lease"
+# - we are selecting only residential properties
 # - we have 20/50 rule rather than 20/80. top 20 agents are bringing 50 percent of brokerage income
 #
 # - We want to optimize for recall. We do not want to miss investing in a high performer because of the return. It's OK if precision suffers a little. At worst we invest in someone who is not going to be a high performer. However, this loss is better than losing out on the return from a high performer.
+#
+# - there shouldn't be enough features to derive the dependent variable
+# - When K-folding, do train-test split
+# - drop commercial for now; but come back if we have time
+#     - clarify whether $5mil+ is considered high performance for commercial realtor
+# - Ben recommends classifying realtors according to what type of properties they usually sell.
 
 # ### Questions
 # * Brokerage Agency may have an impact on agent performance but we want to remain brokerage-agnostic.
@@ -52,6 +58,8 @@
 # * Why do we have NaNs in gci and brokerage_net for transactions that were COMPLETED?
 # * What does "other" mean for tags/property_use (we will drop it until we get clarification)?
 # * Which homes in terms of price are the best to sell?
+# * What is the rolling average of home sales price by month
+# * what are the key differences between commercial property sales and residential
 
 # ### Hypotheses
 # * Standard Commission Type will positively correlate with units (higher commissions promote more sales activity)
@@ -63,6 +71,11 @@
 # ### To-do list
 # - ROC curve for models
 # - K-fold cross validation
+# - use grid search to tune hyperparameters (https://scikit-learn.org/stable/modules/grid_search.html)
+# - [ ] Stephen - naive model
+# - [ ] Michael - explore leases
+# - [ ] Orion - explore observations where there is no sale amount but there is an override amount
+# - [ ] Jason - explore whether realtors can be classified by property type they sell
 
 # ### Deliverables
 
@@ -402,13 +415,13 @@ agent_df['high_performer'] = (agent_df.sum_sales > 5000000).astype(int)
 # ### Train-test Split
 
 # +
-X = agent_df.drop(columns='high_performer')
+X = agent_df.drop(columns=['high_performer', 'sum_sales'])
 y = agent_df[['high_performer']]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.3, random_state=42, stratify=y)
 # -
 
-# ### Logistic Regression
+# #### Logistic Regression
 
 # +
 logit = LogisticRegression(random_state=42,
@@ -434,7 +447,7 @@ proba_df = proba_df.assign(hp_thresh=np.where(proba_df.hp >= 0.65, 1, 0))
 print(classification_report(y_train, proba_df.hp_thresh))
 # -
 
-# ### Decision Tree
+# #### Decision Tree
 
 tree = DecisionTreeClassifier(criterion='gini',
                               max_depth=5,
@@ -450,7 +463,7 @@ print('---')
 print(classification_report(y_train, y_pred))
 print('---')
 
-# ### KNN
+# #### KNN
 
 knn = KNeighborsClassifier(n_neighbors=3,
                            weights='uniform')
@@ -465,7 +478,7 @@ print('---')
 print(classification_report(y_train, y_pred))
 print('---')
 
-# ### Random Forest
+# #### Random Forest
 
 rf = RandomForestClassifier(bootstrap=True, 
                         class_weight="balanced", 
@@ -485,3 +498,38 @@ print('Accuracy of Random Forest classifier on training set: {:.2f}'
 print('---')
 print(classification_report(y_train, y_pred))
 print('---')
+
+# ### K-Fold Cross Validation
+# We do not have a lot of data, so K-Fold cross validation will allow us to reduce bias and noise by including every observation in the validation set once and in the training set K - 1 times.
+#
+# Use K = 5 and K = 10
+# sklearn.KFold
+#
+# Maybe try Leave Once Out approach
+#
+# Use stratification because our dataset is unbalanced and we have few observations
+#
+# I want to use StratifiedKFold and train a model on each fold and average the coefficients of these models to create an aggregate model.
+
+from sklearn.model_selection import cross_val_score
+
+# #### Logistic Regression
+
+logit = LogisticRegression(random_state=42,
+                           solver='saga')
+scores = cross_val_score(logit, X_train, y_train.high_performer.ravel(), cv=5, scoring="f1")
+print(scores)
+print("F1: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
+
+# #### Decision Tree
+
+tree = DecisionTreeClassifier(criterion='gini',
+                              max_depth=3,
+                              class_weight="balanced",
+                              random_state=42)
+scores = cross_val_score(tree, X_train, y_train.high_performer.ravel(), cv=5, scoring="f1")
+print(scores)
+print("Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
+
+import sklearn
+sklearn.metrics.SCORERS.keys()
