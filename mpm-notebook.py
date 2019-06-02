@@ -273,6 +273,8 @@ pprint(list(df.columns))
 
 # ### Select Finished Transactions
 
+# There are too many issues with handling "OPEN" or other types of transactions. Let's just proceed with the ones we know are finished and the money has come in.
+
 df = df[df.sale_status == 'COMPLETE']
 
 # ### Drop Outliers
@@ -307,7 +309,7 @@ for col in to_encode:
 # ### Date Columns
 
 # #### Correcting dates
-# These dates were corrected because they had bad years. The corrected year for transaction_contracted_at was inferred from the dates for transaction_closed_at and transaction_effective_at columns. A similar approach was used for correcting transaction_effective_at column.
+# These dates were corrected because they had bad years. The corrected year was inferred from the dates for transaction_closed_at and transaction_contracted_at columns.
 
 # Transactions effective at errors fixed
 df.loc[df.trans_id == 8017, 'sale_date'] = "2018-08-31 12:00:00 UTC"
@@ -337,7 +339,7 @@ df = df.assign(sale_quarter=df.sale_date.dt.quarter)
 
 df.property_use = df.property_use.fillna(value='Unknown')
 
-# Remove transactions where property use is unknown and sale amount is less than 25k. We don't want leases
+# Remove transactions where property use is unknown and sale amount is less than 20k. We don't want leases.
 
 print("Before drop:", len(df))
 df = df[(df.sale_amount > 20_000)]
@@ -351,12 +353,12 @@ df.loc[df.property_use == 'Residential|Residential', 'property_use'] = 'Resident
 
 # Get only 2018 data
 
-df_2018 = df[df['sale_year']==2018]
+df_2018 = df[df['sale_year'] == 2018]
 
 # Calculate summary statistics
 
 # Counting transactions
-agent_df = df_2018.groupby('agent_id')[["agent_id"]].count()
+count_df = df_2018.groupby('agent_id')[["agent_id"]].count()
 # Sum
 sum_df = df_2018.groupby('agent_id')[['sale_amount', 'com_agent_net','com_brokerage_net']].sum()
 # Avg
@@ -366,7 +368,7 @@ mean_df = df_2018.groupby('agent_id')[['sale_amount', 'com_agent_net','com_broke
 
 # +
 # Rename columns for join
-agent_df = agent_df.rename(columns={'sale_status': 'trans_count'})
+count_df = count_df.rename(columns={'agent_id': 'trans_count'})
 
 sum_df = sum_df.rename(columns={'sale_amount': 'sum_sales',
                                 'com_agent_net': 'sum_agent_com',
@@ -379,17 +381,43 @@ mean_df = mean_df.rename(columns={'sale_amount': 'avg_sales',
 
 # Join into one dataframe
 
-agent_df = agent_df.join(sum_df).join(mean_df)
+agent_df = count_df.join(sum_df).join(mean_df)
 
 # Add high performer (over 5 mil sum sales) categorical variable
 
 agent_df['high_performer'] = (agent_df.sum_sales > 5_000_000).astype(int)
 
+agent_df.head()
+
 # ### Data Sanity/Validation Checks
 
-df.isnull().sum()
+len(df[(df.sale_year == 2018) & (df.agent_id == 0)]) == agent_df.loc[0, "trans_count"]
+
+df[(df.sale_year == 2018) & (df.agent_id == 2)].sale_amount.sum() == agent_df.loc[2, "sum_sales"]
 
 # ## Exploration
+
+# Distribution of properties sold per agent
+
+plt.figure(figsize=(12, 6))
+sns.distplot(df.agent_id.value_counts(), kde=False, rug=True, axlabel="Houses sold per agent")
+plt.title("Distribution of Houses Sold per Agent (All Years)")
+plt.show()
+
+plt.figure(figsize=(12, 6))
+sns.distplot(df_2018.agent_id.value_counts(), kde=False, rug=True, axlabel="Houses sold per agent")
+plt.title("Distribution of Houses Sold per Agent (2018)")
+plt.show()
+
+# Median sale price of properties sold by top 10 agents by number of properties sold and how does it compare to the median sale price of all agents
+
+# +
+# sns.barplot(x="sum_sales")
+# -
+
+# Median sale price of properties sold by top 10 agents by sum of sale price
+
+
 
 # ## Modeling
 
